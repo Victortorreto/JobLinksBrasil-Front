@@ -1,0 +1,62 @@
+<header>
+  <nav class="container">
+    <h1>JobLink’s</h1>
+    <!-- <img src="/assets/logo.png" class="logo">
+     -->
+
+    <!-- 
+    <form action="#" method="get">
+      <input type="text" name="pesquisa" placeholder="Pesquisa de busca">
+    </form> -->
+
+    
+    <mat-form-field appearance="fill" class="barra-de-busca">
+      <mat-label>Pesquisar</mat-label>
+      <input matInput placeholder="Digite para pesquisar" />
+    </mat-form-field>
+
+    <!-- Botão com ícone de menu -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+
+  </nav>
+
+</header>
+
+<!-- Menu com opções -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/test" routerLinkActive="active">Teste do Input e lista</button>
+  <button mat-menu-item routerLink="/itemdropdown" routerLinkActive="active">Dropdown</button>
+  <button mat-menu-item routerLink="/conecta" routerLinkActive="active">Conectar</button>
+
+
+  <button mat-menu-item routerLink="/" routerLinkActive="active">
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  <button mat-menu-item routerLink="/perfil" routerLinkActive="active">
+    <mat-icon>person</mat-icon>
+    Perfil
+  </button>
+  <button mat-menu-item routerLink="/vagas" routerLinkActive="active">
+    <mat-icon>business_center</mat-icon>
+    Vagas
+  </button>
+  <button mat-menu-item routerLink="/mensagens" routerLinkActive="active">
+    <mat-icon>message</mat-icon>
+    Mensagens
+  </button>
+  <button mat-menu-item routerLink="/notificacao" routerLinkActive="active">
+    <mat-icon>notifications</mat-icon>
+    Notificações
+  </button>
+
+</mat-menu>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <p class="copy"><strong>Todos os direitos reservados à JobLink’s Brasil </strong> </p>
+</footer>

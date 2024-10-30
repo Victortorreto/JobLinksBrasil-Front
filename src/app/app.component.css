@@ -1,0 +1,37 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex; /* Usa flexbox para o alinhamento */
+    align-items: center;
+    justify-content: space-between; /* Distribui espaço entre os itens */
+}
+
+header {
+    background-color: #f0ab4f;
+    color: #ffffff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 45px;
+}
+
+.barra-de-busca {
+    flex: 1;                    /* Faz a barra de busca ocupar o espaço disponível */         
+    margin: 0 50px;
+}
+
+.menu-button {
+    margin-left: auto;    
+    
+}
+
+footer {
+    background-color: #f0ab4f;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    clear: both;
+    margin-top: auto; 
+}

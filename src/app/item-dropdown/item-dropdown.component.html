@@ -1,0 +1,38 @@
+<nav>
+<h1>Dropdown</h1>
+
+
+<!-- Dropdown para Países -->
+<select [(ngModel)]="select1" (change)="onChange()">
+    <option *ngFor="let p of paises" [value]="p.id">
+        {{p.nome}}
+    </option>
+</select>
+<!-- Dropdown para Cidades -->
+<select [(ngModel)]="select2" class="rounded-inputs20 select-select col-md-3">
+    <option *ngFor="let c of cidades" [value]="c">
+        {{c}}
+    </option>
+</select>
+
+
+<!-- Botão para Confirmar Seleção -->
+<button (click)="clickButton()">OK</button>
+
+
+<!-- Exibição do País e Cidade Selecionados -->
+<p>País: {{pais}}</p>
+<p>Cidade: {{cidade}}</p>
+</nav>
+
+
+<h2>Dados da cidade no DropDown</h2>
+
+
+<!-- Seletor da cidade para pais -->
+<select [(ngModel)]="cidade">
+    <option *ngFor="let d of cidades" [value]="d">
+        {{d}}
+    </option>    
+</select>
+<p>País: {{pais}}</p>

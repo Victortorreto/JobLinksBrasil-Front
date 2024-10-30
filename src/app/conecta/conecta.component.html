@@ -1,0 +1,25 @@
+
+<br/><br/>
+<p>Aqui iremos conectar o back-end</p>
+<hr/>
+
+<br/>
+<button (click)="chamadaBack()">Teste do Back Get</button>
+<br/>
+<ul *ngFor="let result of val" >    
+    <li>{{result.id}}- {{result.first_name}}  {{result.last_name}} </li>
+</ul>
+<hr/>
+
+<br/>
+<label>Entre com o nome: <input [(ngModel)]="vItemNome" /></label>
+<br/><br/>
+<label>Entre com o trabalho: <input [(ngModel)]="vItemJob" /></label>
+<br/><br/>
+<label>Entre com o código: <input [(ngModel)]="vItemcode" /></label>
+<br/><br/>
+<button (click)="chamadaBackPost()">Teste do Back Post</button>
+
+<ul *ngIf="(clientResult)">    
+    <li>{{clientResult.id}} - {{clientResult.name}} - {{clientResult.job}} - {{clientResult.createdAt}} </li>
+</ul>
