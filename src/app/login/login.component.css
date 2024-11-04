@@ -63,8 +63,8 @@ input[type="email"], input[type="password"] {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #F1F1F1;
-    border-radius: 5px;
-    background-color: #FDF9EE;
+    border-radius: 50px;
+    background-color: #fff1cf;
 }
 
 .password-container {
@@ -84,11 +84,19 @@ input[type="email"], input[type="password"] {
 
 .forgot-password {
     color: #000;
-    font-size: 12px;
+    font-size: 15px;
     text-decoration: none;
     margin-top: -8px;
     margin-bottom: 20px;
     display: inline-block;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.forgot-password:hover{
+    color: #0044d6;
+    transition: 0.5s;
+    opacity: 0.7;
+    text-decoration: underline;
 }
 
 .login-button {
@@ -105,13 +113,19 @@ input[type="email"], input[type="password"] {
 }
 
 .register {
-    font-size: 14px;
+    font-size: 17px;
     margin-top: 20px;
 }
 
 .register a {
     color: #000;
     text-decoration: none;
+}
+.register a:hover{
+    color: #0044d6;
+    transition: 0.5s;
+    opacity: 0.7;
+    text-decoration: underline;
 }
 
 .illustrations {
@@ -138,19 +152,28 @@ footer {
 .tela{
     width: 150%;
     padding-left: 10%;
+    font-family: 'Playfair Display';
+    height: 100%;
 }
 
 .geral{
     width: 100%;
+    height: 100%;
     display: flex;
     padding-right: 10%;
 }
 .texto_login{
-    text-align: left;
-    padding-left: 30%;
-    
+   font-size: 50px;
+   padding-bottom: 15%;
 }
 .input{
     width: 100%;
+}
+.titulo{
+    font-size: 20px;
+    padding-left: 15px;
+}
+.botao{
+    padding-top: 20%;
 }
 
