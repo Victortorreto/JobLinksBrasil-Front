@@ -22,6 +22,7 @@ import { VagasComponent } from './vagas/vagas.component';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { LoginComponent } from './login/login.component';
     MensagensComponent,
     NotificacaoComponent,
     LoginComponent,
+    RegistroComponent,
     
    
   ],

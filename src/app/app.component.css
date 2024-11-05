@@ -8,13 +8,19 @@
 }
 
 header {
-    background-color: #f0ab4f;
-    color: #ffffff;
+    background-color: #F6A935;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
 }
 
 header h1 {
+    font-size: 24px;
+    font-weight: bold;
     margin: 0;
-    font-size: 45px;
+}
+.logo{
+    width: 150px;
 }
 
 .barra-de-busca {
@@ -28,10 +34,13 @@ header h1 {
 }
 
 footer {
-    background-color: #f0ab4f;
-    color: #ffffff;
-    padding: 10px;
-    text-align: center;
-    clear: both;
-    margin-top: auto; 
+    background-color: #F6A935;
+    text-align: right;
+    padding-top: 1%;
+    font-size: 12px;
+    color: #fff;
+    margin-top: 20px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
 }

@@ -1,19 +1,20 @@
 <header>
   <nav class="container">
-    <h1>JobLink’s</h1>
-    <!-- <img src="/assets/logo.png" class="logo">
-     -->
+    
+     <img src="/logo.png" class="logo">
 
-    <!-- 
+
+    
+    <!-- <h1>JobLink’s</h1>
     <form action="#" method="get">
       <input type="text" name="pesquisa" placeholder="Pesquisa de busca">
     </form> -->
 
     
-    <mat-form-field appearance="fill" class="barra-de-busca">
+    <!-- <mat-form-field appearance="fill" class="barra-de-busca">
       <mat-label>Pesquisar</mat-label>
       <input matInput placeholder="Digite para pesquisar" />
-    </mat-form-field>
+    </mat-form-field> -->
 
     <!-- Botão com ícone de menu -->
     <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
@@ -35,6 +36,14 @@
   <button mat-menu-item routerLink="/" routerLinkActive="active">
     <mat-icon>home</mat-icon>
     Home
+  </button>
+  <button mat-menu-item routerLink="/login" routerLinkActive="active">
+    <mat-icon>person</mat-icon>
+    Login
+  </button>
+  <button mat-menu-item routerLink="/registro" routerLinkActive="active">
+    <mat-icon>person</mat-icon>
+    Registro
   </button>
   <button mat-menu-item routerLink="/perfil" routerLinkActive="active">
     <mat-icon>person</mat-icon>
@@ -58,5 +67,5 @@
 <router-outlet></router-outlet>
 
 <footer>
-  <p class="copy"><strong>Todos os direitos reservados à JobLink’s Brasil </strong> </p>
+  <p>Todos os direitos reservados à JobLink's Brasil</p>
 </footer>
