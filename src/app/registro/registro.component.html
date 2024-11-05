@@ -17,24 +17,25 @@
         <main>
             <div class="geral">
                 <div class="tela">
-                    <h2>Cadastro:</h2>
-                    <form>
-                        <label for="name">Nome:</label>
+                    <h2 class="texto_registro">Cadastro:</h2>
+                    <form class="registro">
+                        <label for="name" class="titulo">Nome:</label>
                         <input type="text" id="name" placeholder="Digite o seu nome">
 
-                        <label for="email">Email:</label>
+                        <label for="email" class="titulo">Email:</label>
                         <input type="email" id="email" placeholder="Digite o seu e-mail">
 
-                        <label for="password">Senha:</label>
+                        <label for="password" class="titulo">Senha:</label>
                         <div class="password-container">
                             <input type="password" id="password" placeholder="Digite a sua senha">
                             <span class="toggle-password">&#128065;</span>
                         </div>
 
-                        <label for="confirm-password">Confirma Senha:</label>
+                        <label for="confirm-password" class="titulo">Confirme Senha:</label>
                         <input type="password" id="confirm-password" placeholder="Confirme a senha">
-
-                        <button type="submit">Cadastrar</button>
+                        <div class="botao">    
+                            <button type="submit" class="register-button">Cadastrar</button>
+                        </div>
                     </form>
                     <p>Já é nosso usuário? <a href="#">Faça o login</a></p>
                 </div>
