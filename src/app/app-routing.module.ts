@@ -10,12 +10,14 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { VagasComponent } from './vagas/vagas.component';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { NotificacaoComponent } from './notificacao/notificacao.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: 'test', component:TestComponent},
   {path: 'itemdropdown', component:ItemDropdownComponent},
   {path: 'conecta', component:ConectaComponent},
-
+  
+  {path: 'login', component:LoginComponent},
   {path: 'perfil', component:PerfilComponent},
   {path: 'vagas', component:VagasComponent},
   {path: 'mensagens', component:MensagensComponent},
