@@ -12,6 +12,8 @@ header {
     color: #fff;
     padding: 10px;
     text-align: left;
+    position: fixed;
+    width: 100%;
 }
 
 header h1 {
@@ -41,6 +43,5 @@ footer {
     color: #fff;
     margin-top: 20px;
     bottom: 0;
-    position: fixed;
     width: 100%;
 }
