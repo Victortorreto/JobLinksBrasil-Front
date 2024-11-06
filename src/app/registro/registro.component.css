@@ -7,18 +7,16 @@
 }
 
 body {
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-    font-family: 'Playfair Display';
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
 }
 
 .container {
     width: 100%;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto;  
 }
 
 h2 {
@@ -47,27 +45,25 @@ header h1 {
 }
 
 main {
-    padding: 20px;
     text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: flex-start;
 }
 
 label {
-    font-size: 14px;
     font-weight: bold;
-    text-align: left;
-    color: #555;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
+    width: 30%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #F1F1F1;
@@ -76,31 +72,25 @@ input[type="password"] {
 }
 
 .password-container {
-    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.password-container input{
+    flex: 1;
 }
 
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #f4a941;
-}
-
-button {
-    background-color: #f4a941;
+.register-button {
+    width: 200px;
+    padding: 9px;
+    background-color: #F6A935;
     color: #fff;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 25px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #e5942e;
+    font-family: 'Playfair Display';
 }
 
 p {
@@ -114,6 +104,18 @@ a {
     text-decoration: none;
 }
 
+a:hover{
+    color: #0044d6;
+    transition: 0.5s;
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.login {
+    font-size: 17px;
+    margin-top: 20px;
+}
+
 footer {
     background-color: #F6A935;
     text-align: right;
@@ -122,9 +124,7 @@ footer {
     color: #fff;
     margin-top: 20px;
     bottom: 0;
-    position: fixed;
     width: 100%;
-
 }
 
 .illustrations {
@@ -136,7 +136,7 @@ footer {
     height: 500px;
 }
 .tela{
-    width: 150%;
+    width: 100%;
     padding-left: 10%;
     font-family: 'Playfair Display';
     height: 100%;
@@ -147,21 +147,16 @@ footer {
     height: 100%;
     display: flex;
     padding-right: 10%;
-    font-family: 'Playfair Display';
+    padding-top: 100px;
 }
 .texto_registro{
-    color: #f4a941;
     font-size: 50px;
-    padding-bottom: 5%;
-    font-family: 'Playfair Display';
+   padding-bottom: 15%;
  }
 
 .titulo{
     font-size: 20px;
     padding-left: 15px;
-}
-.botao{
-    padding-top: 5%;
 }
 .register-button {
     width: 200px;
