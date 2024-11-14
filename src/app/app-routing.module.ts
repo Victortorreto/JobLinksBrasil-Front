@@ -10,16 +10,21 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { VagasComponent } from './vagas/vagas.component';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { NotificacaoComponent } from './notificacao/notificacao.component';
+import { HomeComponent } from './home/home.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {path: 'test', component:TestComponent},
   {path: 'itemdropdown', component:ItemDropdownComponent},
   {path: 'conecta', component:ConectaComponent},
 
+  {path: 'perfil', component: PerfilComponent},
   {path: 'perfil', component:PerfilComponent},
   {path: 'vagas', component:VagasComponent},
   {path: 'mensagens', component:MensagensComponent},
   {path: 'notificacao', component:NotificacaoComponent},
+  {path: 'home', component:HomeComponent},
+  {path: '', component: HomeComponent },
   //não precisa path para o início},
 ];
 

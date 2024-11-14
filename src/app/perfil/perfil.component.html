@@ -1,39 +1,209 @@
-<body>
-    <div class="container">
-        <section> class="header">
-            <div class="profile-image">
-                <img src="profile-image.jpg" alt="Profile Image">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<div class="container">
+    <div class="profile-main">
+        <div class="profile-container">
+            <div class="fundo">
+               
+                <span class="material-symbols-outlined">photo_camera</span>
+                    
+    
             </div>
-            <div class="header-text">
-                <h1>Nome do Candidato</h1>
-                <p>Profissão do Candidato</p>
-            </div>
-        </section>
-        <div class="content">
-            <div class="ex">
-                <h2>Experiência</h2>
-                <ul>
-                    <li><a href="#">Experiência 1</a></li>
-                    <li><a href="#">Experiência 2</a></li>
-                    <li><a href="#">Experiência 3</a></li>
-                </ul>
-            </div>
-            <div class="ex">
-                <h2>Educação</h2>
-                <ul>
-                    <li><a href="#">Educação 1</a></li>
-                    <li><a href="#">Educação 2</a></li>
-                    <li><a href="#">Educação 3</a></li>
-                </ul>
-            </div>
-            <div class="ex">
-                <h2>Habilidades</h2>
-                <ul>
-                    <li><a href="#">Habilidade 1</a></li>
-                    <li><a href="#">Habilidade 2</a></li>
-                    <li><a href="#">Habilidade 3</a></li>
-                </ul>
+            <div class="profile-container-inner">
+                 <!-- Exibe o ícone de foto se não houver imagem selecionada -->
+                <i (click)="triggerFileInput()" class="profile-pic" *ngIf="!imageUrl">
+                <span class="material-symbols-outlined">photo_camera</span>
+                 </i>
+
+                <!-- Exibe a imagem selecionada quando houver uma URL -->
+                <img *ngIf="imageUrl" [src]="imageUrl" class="profile-pic" alt="Profile Picture">
+
+                <!-- Input oculto para seleção de imagem -->
+                <input #fileInput type="file" accept="image/*" (change)="onImageSelected($event)" style="display:none">
+
+                <h1>Victor Garcia</h1>
+                <b>Web developer at microsoft</b>
+                <p>São Paulo, Brasil<a href="#">Contato info</a></p>
             </div>
         </div>
+
+        <div class="profile-description">
+            <h2>Sobre</h2>
+            <p *ngIf="!isSobreOpen">{{ aboutText }}</p> <!-- Exibe o texto da descrição -->
+
+            <div class="textarea-container" *ngIf="isSobreOpen">
+                <textarea [(ngModel)]="aboutText" placeholder="Escreva sobre você..."></textarea>
+                <!-- Campo de edição -->
+                <button class="close-button" (click)="closePanel()">Fechar</button>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('sobre')"> edit </span>
+            </div>
+        </div>
+
+        <div class="profile-description">
+            <h2>Experiência</h2>
+            <div *ngFor="let experience of experiences; let i = index" class="profile-desc-row">
+                <img src="https://freepngimg.com/thumb/microsoft/28350-5-microsoft-logo-photos.png">
+                <div>
+                    <h3>{{ experience.position }}</h3>
+                    <b>{{ experience.company }}</b>
+                    <b>{{ experience.duration }}</b>
+                    <p>{{ experience.description }}</p>
+                    <i (click)="removeExperience(i)" class="delete-icon"><span class="material-symbols-outlined">delete
+                        </span></i>
+                </div>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('exper')"> edit </span>
+            </div>
+
+
+            <div class="add-education-panel" *ngIf="isExperOpen">
+                <div class="panel-content">
+                    <div class="add-experience">
+                        <h3>Nova Experiência</h3>
+                        <input type="text" [(ngModel)]="newExperience.position" placeholder="Cargo">
+                        <input type="text" [(ngModel)]="newExperience.company" placeholder="Empresa">
+                        <input type="text" [(ngModel)]="newExperience.duration" placeholder="Duração">
+                        <input type="text" [(ngModel)]="newExperience.description" placeholder="Descrição">
+                        <button (click)="addExperience()">Adicionar</button>
+                        <button (click)="closePanel()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="profile-desc-row">
+                <img src="https://freepngimg.com/thumb/microsoft/28350-5-microsoft-logo-photos.png">
+                <div>
+                    <h3>Lead Front-End Developer</h3>
+                    <b> microsoft, Full-time</b>
+                    <b>Feb 2022 - Present, 1.5 years</b>
+                    <p>O filme tem previsão de estreia para 2026, mas sem uma data cravada.
+                        Além disso, este será o primeiro filme da franquia feito fora da Blue Sky,</p>
+                </div>
+            </div>
+
+            <div class="profile-desc-row">
+                <img src="https://freepngimg.com/thumb/microsoft/28350-5-microsoft-logo-photos.png">
+                <div>
+                    <h3>Lead Front-End Developer</h3>
+                    <b> microsoft, Full-time</b>
+                    <b>Feb 2022 - Present, 1.5 years</b>
+                    <p>O filme tem previsão de estreia para 2026, mas sem uma data cravada.
+                        Além disso, este será o primeiro filme da franquia feito fora da Blue Sky,</p>
+                </div>
+            </div> -->
+
+        </div>
+
+        <div class="profile-description">
+            <h2>Educação</h2>
+            <div *ngFor="let education of educationList; let i = index" class="profile-desc-row">
+                <!-- Exibe o ícone de foto se não houver imagem selecionada -->
+                <i (click)="triggerFileInput()" *ngIf="!imageUrl">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                     </i>
+    
+                <!-- Exibe a imagem selecionada quando houver uma URL -->
+                <img *ngIf="imageUrl" [src]="imageUrl" alt="Profile Picture">
+    
+                <!-- Input oculto para seleção de imagem -->
+                <input #fileInput type="file" accept="image/*" (change)="onImageSelected($event)" style="display:none">
+                   
+
+                <div>
+                    <h3>{{ education.degree }}</h3>
+                    <b>{{ education.school }}</b>
+                    <b>{{ education.duration }}</b>
+                    <i (click)="removeEducation(i)" class="delete-icon"><span
+                            class="material-symbols-outlined">delete</span></i>
+                </div>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('edu')"> edit </span>
+            </div>
+
+            <div class="add-education-panel" *ngIf="isPanelOpen">
+                <div class="panel-content">
+                    <h3> Nova Educação</h3>
+                    <input type="text" [(ngModel)]="newEducation.degree" placeholder="Grau">
+                    <input type="text" [(ngModel)]="newEducation.school" placeholder="Instituição">
+                    <input type="text" [(ngModel)]="newEducation.duration" placeholder="Duração">
+                    <button (click)="addEducation()">Adicionar</button>
+                    <button (click)="closePanel()">Fechar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="profile-description">
+            <h2>Habilidades</h2>
+
+            <div *ngFor="let skill of skills">
+                <a class="skills-btn">{{ skill }}</a>
+            </div>
+
+            <div class="add-education-panel" *ngIf="isSkillslOpen">
+                <div class="panel-content">
+                    <div class="add-skills">
+                        <input type="text" [(ngModel)]="newSkill" placeholder="Nova Habilidade">
+                        <button (click)="addSkill()">Adicionar</button>
+                        <button (click)="closePanel()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('habi')"> edit </span>
+            </div>
+        </div>
+
+        <div class="profile-description">
+            <h2>Idiomas</h2>
+
+            <div *ngFor="let language of languages">
+                <a class="language-btn">{{ language }}</a>
+            </div>
+
+            <div class="add-education-panel" *ngIf="isLanguagelOpen">
+                <div class="panel-content">
+                    <div class="add-languages">
+                        <input type="text" [(ngModel)]="newLanguage" placeholder="Novo Idioma">
+                        <button (click)="addLanguage()">Adicionar</button>
+                        <button (click)="closePanel()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('idioma')"> edit </span>
+            </div>
+        </div>
+
+        <div class="profile-sidebar">
+
+        </div>
+        <!-- 
+        <div class="profile-footer">
+            <div class="sidebar-useful-links">
+                <a>About</a>
+                <a>Acessibility</a>
+                <a>Help Center</a>
+                <a>Privacy Policy</a>
+                <a>Advertising</a>
+                <a>Get the App</a>
+                <a>More</a>
+
+                <div class="copyright-msg">
+                    <img src="https://th.bing.com/th/id/R.83067b6e0e8720585d90eac6934117c0?rik=KkHl3d6KBw2NWQ&riu=http%3a%2f%2fmarcuselliott.co.uk%2fwp-content%2fuploads%2f2016%2f08%2fIn-2C-48px-R.png&ehk=bTyFylYhoBx%2bQ4w%2broKv9Vm5VE1%2b%2bY9L6ICSE6ytoSY%3d&risl=&pid=ImgRaw&r=0"
+                        class="imagem">
+                    <p>2024 JobLink's Brasil Corporation. All rights reserved.</p>
+                </div>
+            </div>
+        </div> -->
+
+
     </div>
-</body>
