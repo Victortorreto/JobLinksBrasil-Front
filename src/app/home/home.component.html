@@ -1,0 +1,211 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<div class="container">
+  <div class="left-sidebar"></div>
+
+  <div class="main-content">
+    <div class="create-post">
+      <div class="create-post-input">
+        <img [src]="userPhoto" alt="User Photo">
+        <textarea rows="2" [(ngModel)]="newPostContent" placeholder="Escreva um post"></textarea>
+      </div>
+      <div class="create-post-links">
+        <li (click)="triggerFileInput('photo')"><span class="material-symbols-outlined">
+            photo_camera
+          </span>Foto<input #photoInput type="file" accept="image/*" (change)="onFileChange($event, 'photo')"
+            style="display:none">
+        </li>
+        <li (click)="triggerFileInput('video')"><span class="material-symbols-outlined">
+            videocam
+          </span>Video <input #videoInput type="file" accept="video/*" (change)="onFileChange($event, 'video')"
+            style="display:none">
+        </li>
+        <li (click)="triggerFileInput('doc')"><img src="src/event.png">Documento <input #documentoInput type="file"
+            accept="documento/*" (change)="onFileChange($event, 'documento')" style="display:none"></li>
+        <li><button (click)="postContent()">Postar</button></li>
+      </div>
+    </div>
+
+    <div class="sort-by">
+      <hr>
+      <p>Sort by: <span>top <i class="material-symbols-outlined"> arrow_drop_down</i></span></p>
+    </div>
+
+    <div *ngFor="let post of posts" class="post">
+      <div class="post-author">
+        <img [src]="post.userPhoto" alt="Post Author Photo">
+        <div>
+          <h1>{{ post.userName }}</h1>
+          <small>{{ post.timestamp }}</small>
+        </div>
+      </div>
+      <p>{{ post.content }}</p>
+      <img *ngIf="post.photo" [src]="post.photo" alt="Post Photo" width="100%">
+      <video *ngIf="post.video" [src]="post.video" controls width="100%"></video>
+
+      <div class="post-stats">
+        <div>
+          <img src="C:\Users\victo\OneDrive\Imagens\Capturas de tela\like.png">
+          <img src="src\assets\coracao.png">
+          <img src="src/parabens.png">
+          <span class="liked-users"> Zeze marcelo and 75 others</span>
+        </div>
+        <div>
+          <span>22 comments; 40 shares</span>
+        </div>
+      </div>
+      <div class="post-activity">
+        <div>
+          <img src="https://img.freepik.com/premium-psd/businesswoman-transparency-background-psd_693425-25413.jpg"
+            class="post-activity-user-icon">
+          <img src="src/arrow_drop_down.png" class="post-activity-arrow-icon">
+        </div>
+        <div class="post-activity-link">
+          <img src="src/like.png">
+          <span>Gostei</span>
+        </div>
+        <div class="post-activity-link">
+          <img src="src/comment.png">
+          <span>Comentário</span>
+        </div>
+        <div class="post-activity-link">
+          <img src="src/share.png">
+          <span>Compartilhar</span>
+        </div>
+        <div class="post-activity-link">
+          <img src="src/send.png">
+          <span>Enviar</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="post">
+      <div class="post-author">
+        <img src="https://www.westsidetile.com/wp-content/uploads/2019/02/wst_3-min.jpg">
+        <div>
+          <h1>Maria Soares</h1>
+          <small>Fundador e CEO do grupo | Angel Investor</small>
+          <small>4 de Novembro</small>
+        </div>
+      </div>
+      <p>O propósito básico de uma reunião é facilitar a comunicação entre os participantes.
+        É nesse momento que ideias são compartilhadas,
+        problemas são discutidos e soluções são encontradas.</p>
+      <img src="https://th.bing.com/th/id/R.c214d38613fd5d05c340a72d67674ba8?rik=UupPmyyXnfNqeg&pid=ImgRaw&r=0"
+        width="100%">
+
+      <div class="post-stats">
+        <div>
+          <i class="material-symbols-outlined">thumb_up </i>
+          <i class="material-symbols-outlined"> favorite </i>
+          <i class="material-symbols-outlined"> sign_language </i>
+          <span class="liked-users"> Zeze marcelo e 75 outros</span>
+        </div>
+        <div>
+          <span>24 Comentários, 8 Compartilhamentos</span>
+        </div>
+      </div>
+      <div class="post-activity">
+        <div>
+          <img src="https://www.westsidetile.com/wp-content/uploads/2019/02/wst_3-min.jpg"
+            class="post-activity-user-icon">
+          <i class="material-symbols-outlined">arrow_drop_down</i>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">thumb_up </i>
+          <span>Gostei</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">comment</i>
+          <span>Comentário</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> share_windows </i>
+          <span>Compartilhar</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> send </i>
+          <span>Enviar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-author">
+        <img src="https://d1fdloi71mui9q.cloudfront.net/iUHuHtjRSu6lQJ0W8tbw_uRpKJ0Bc0wGyB27n">
+        <div>
+          <h1>Sócrates</h1>
+          <small>Recrutador e Analista do grupo | Microsoft </small>
+          <small>2 de agosto</small>
+        </div>
+      </div>
+      <p>O propósito básico de uma reunião é facilitar a comunicação entre os participantes.
+        É nesse momento que ideias são compartilhadas,
+        problemas são discutidos e soluções são encontradas.</p>
+      <img
+        src="https://static.wixstatic.com/media/bdaefe_d9d428fb0c834d978cc3316169393cb0~mv2.png/v1/fill/w_842,h_595,al_c/bdaefe_d9d428fb0c834d978cc3316169393cb0~mv2.png"
+        width="100%">
+
+      <div class="post-stats">
+        <div>
+          <i class="material-symbols-outlined">thumb_up </i>
+          <i class="material-symbols-outlined"> favorite </i>
+          <i class="material-symbols-outlined"> sign_language </i>
+          <span class="liked-users"> Julia Machedo e 103 outros</span>
+        </div>
+        <div>
+          <span>50 Comentários, 30 Compartilhamentos</span>
+        </div>
+      </div>
+      <div class="post-activity">
+        <div>
+          <img src="https://d1fdloi71mui9q.cloudfront.net/iUHuHtjRSu6lQJ0W8tbw_uRpKJ0Bc0wGyB27n"
+            class="post-activity-user-icon">
+          <i class="material-symbols-outlined">arrow_drop_down</i>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">thumb_up </i>
+          <span>Gostei</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">comment</i>
+          <span>Comentário</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> share_windows </i>
+          <span>Compartilhar</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> send </i>
+          <span>Enviar</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="right-sidebar">
+    <div class="sidebar-news">
+        <img src="https://ghs.guam.gov/sites/default/files/news-icon.png" class="sidebar-info">
+        <h3>Trending News</h3>
+        <a>Sérgio Gilberto Marçal, de 64 anos </a>
+        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+
+        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
+        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+
+        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
+        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+
+        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
+        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+
+        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
+        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+
+        <a href="#" class="read-more-link">Read More</a>
+    </div>
+
+</div>
