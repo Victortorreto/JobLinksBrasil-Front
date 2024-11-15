@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="login.component.css">
 </head>
 
-<div class="container">
-    <header>
-        <img src="/logo.png" alt="magem Login" class="JobLink">
-    </header>
-    <body>
+<body>
+    <div class="container">
+        <header>
+            <img src="/logo.png" alt="Imagem Login" class="JobLink">
+        </header>
+
         <main>
             <div class="geral">
                 <div class="tela">
@@ -20,30 +21,29 @@
                     <form class="cadastro">
                         <label for="email" class="titulo">EMAIL:</label>
                         <div class="password-container">
-                            <input type="email" id="email" placeholder="Digite o seu e-mail">
+                            <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Digite o seu e-mail">
                         </div>
 
-                        <label for="password" class="titulo">SENHA:</label>
+                        <label for="senha" class="titulo">SENHA:</label>
                         <div class="password-container">
-                            <input type="password" id="password" placeholder="Digite a sua senha">
+                            <input type="password" id="senha" [(ngModel)]="senha" name="senha" placeholder="Digite a sua senha">
                         </div>
 
                         <a href="#" class="forgot-password" id="forgot-password">Esqueci minha senha</a>
                     </form>
                     <div class="botao">
-                        <button type="submit" class="login-button">ENTRAR</button>
+                        <button type="button" class="login-button" (click)="login()">ENTRAR</button>
                         <p class="register">Não é nosso usuário? <a href="../registro">Cadastre-se</a></p>
                     </div>
                 </div>
-                    <img src="/imagem_login.png" alt="imagem Login" class="illustrations">
+                <img src="/imagem_login.png" alt="Imagem Login" class="illustrations">
             </div>
-
         </main>
 
-    </body>
-    <footer>
-        <p class="direitos">Todos os direitos reservados à JobLink's Brasil</p>
-    </footer>
-</div>
+        <footer>
+            <p class="direitos">Todos os direitos reservados à JobLink's Brasil</p>
+        </footer>
+    </div>
+</body>
 
 </html>
