@@ -15,7 +15,7 @@ export class UsuarioService {
     return this.http.post(`${this.apiUrl}/cadastro`, dadosUsuario);
   }
 
-  loginUsuario(credenciais: { email: string; senha: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credenciais);
-  }
+  loginUsuario(credenciais: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, credenciais, { responseType: 'text' });
+}
 }
