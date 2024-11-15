@@ -28,12 +28,12 @@
 
                         <label for="email" class="titulo">EMAIL:</label>
                         <div class="password-container">
-                            <input type="email" id="email" placeholder="Digite o seu e-mail">
+                            <input type="email" id="email" [(ngModel)]="email" placeholder="Digite o seu e-mail">
                         </div>
 
                         <label for="password" class="titulo">SENHA:</label>
                         <div class="password-container">
-                            <input type="password" id="password" placeholder="Digite a sua senha">
+                            <input type="password" id="password" [(ngModel)]="password" placeholder="Digite a sua senha">
                         </div>
 
                         <label for="confirm-password" class="titulo">CONFIRME A SENHA:</label>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="botao">
-                            <button type="submit" class="register-button">Cadastrar</button>
+                            <button type="submit" class="register-button" (click)="cadastro()">Cadastrar</button>
                         </div>
                     </form>
                     <p class="login">Já é nosso usuário? <a href="../login/">Faça o login</a></p>
