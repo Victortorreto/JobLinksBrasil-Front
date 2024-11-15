@@ -20,7 +20,7 @@ export class LoginComponent {
       next: (response) => {
         console.log('Login bem-sucedido', response);
         // Redireciona para a página principal após login bem-sucedido
-        this.router.navigate(['/home']);
+        this.router.navigate(['/vagas']);
       },
       error: (error) => {
         console.log(credenciais)
