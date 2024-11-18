@@ -1,0 +1,103 @@
+.container {
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*------left-sidebar------*/
+.left-sidebar {
+    flex-basis: 23%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;
+}
+.sidebar-profile-box {
+    background: #ebdeb6;
+    border-radius: 15px;
+}
+.sidebar-profile-box img{
+    border-radius: 15px;
+}
+.sidebar-profile-info {
+    padding: 0 25px;
+    font-size: 14px;
+}
+
+.sidebar-profile-info img {
+    width: 90px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+    margin-top: -45px;
+}
+
+.sidebar-profile-info h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.main-content {
+    flex-basis: 48%;
+}
+
+.sidebar-news {
+    background: #ebdeb6;
+    padding: 10px 25px;
+    border-radius: 15px;
+}
+
+.sidebar-news h3 { 
+    font-size: 30px;  
+    font-weight: 600;
+    margin: 4px 0 10px;
+    text-align: center;
+    font-family: bold;
+}
+
+.barra-de-rolagem {
+    max-height: 540px; 
+    overflow-y: auto; 
+    margin-top: 10px;
+}
+
+.sd {
+    font-weight: 100%;
+    background-color: #ebc860;
+    border-radius: 30px;
+    margin-top: 10px;
+    
+}
+.sidebar-people-row{
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    
+}
+.sidebar-people-row img{
+    width: 40px;
+    border-radius: 50%;
+    padding-left: 4px;
+    padding-right: 20px;
+}
+.sidebar-people-row h2{
+    font-size: 16px;
+    color: black;
+    top: 0; 
+}
+.sidebar-people-row p {
+    font-size: 14px;    
+}
+
+/*------right-sidebar------*/
+.right-sidebar {
+    flex-basis: 25%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;
+}
+
+
+
+

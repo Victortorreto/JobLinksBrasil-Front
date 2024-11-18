@@ -2,17 +2,16 @@
 <div class="container">
     <div class="profile-main">
         <div class="profile-container">
-            <div class="fundo">
-               
+            <div class="fundo" (click)="triggerFileInputFundo()">
                 <span class="material-symbols-outlined">photo_camera</span>
-                    
-    
+                <!-- Exibe a imagem selecionada dentro da div fundo -->
+                <img *ngIf="imageUrlFundo" [src]="imageUrlFundo" />
+                <input #fileInputFundo type="file" accept="image/*" (change)="onImageSelectedFundo($event)" style="display:none">
             </div>
             <div class="profile-container-inner">
-                 <!-- Exibe o ícone de foto se não houver imagem selecionada -->
                 <i (click)="triggerFileInput()" class="profile-pic" *ngIf="!imageUrl">
-                <span class="material-symbols-outlined">photo_camera</span>
-                 </i>
+                    <span class="material-symbols-outlined">photo_camera</span>
+                </i>
 
                 <!-- Exibe a imagem selecionada quando houver uma URL -->
                 <img *ngIf="imageUrl" [src]="imageUrl" class="profile-pic" alt="Profile Picture">
@@ -20,9 +19,10 @@
                 <!-- Input oculto para seleção de imagem -->
                 <input #fileInput type="file" accept="image/*" (change)="onImageSelected($event)" style="display:none">
 
-                <h1>Victor Garcia</h1>
-                <b>Web developer at microsoft</b>
-                <p>São Paulo, Brasil<a href="#">Contato info</a></p>
+                <h1>Nome de Usuário</h1>
+                <b>Estudante de Análise de Desenvolvimento de Sistemas</b>
+                <p>Senai São Caetano do Sul</p>
+                <p>São Paulo, Brasil</p>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
         <div class="profile-description">
             <h2>Experiência</h2>
             <div *ngFor="let experience of experiences; let i = index" class="profile-desc-row">
-                <img src="https://freepngimg.com/thumb/microsoft/28350-5-microsoft-logo-photos.png">
+                <img [src]="imageUrlExpe">
                 <div>
                     <h3>{{ experience.position }}</h3>
                     <b>{{ experience.company }}</b>
@@ -52,6 +52,7 @@
                     <p>{{ experience.description }}</p>
                     <i (click)="removeExperience(i)" class="delete-icon"><span class="material-symbols-outlined">delete
                         </span></i>
+                    <hr>
                 </div>
             </div>
 
@@ -73,52 +74,19 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="profile-desc-row">
-                <img src="https://freepngimg.com/thumb/microsoft/28350-5-microsoft-logo-photos.png">
-                <div>
-                    <h3>Lead Front-End Developer</h3>
-                    <b> microsoft, Full-time</b>
-                    <b>Feb 2022 - Present, 1.5 years</b>
-                    <p>O filme tem previsão de estreia para 2026, mas sem uma data cravada.
-                        Além disso, este será o primeiro filme da franquia feito fora da Blue Sky,</p>
-                </div>
-            </div>
-
-            <div class="profile-desc-row">
-                <img src="https://freepngimg.com/thumb/microsoft/28350-5-microsoft-logo-photos.png">
-                <div>
-                    <h3>Lead Front-End Developer</h3>
-                    <b> microsoft, Full-time</b>
-                    <b>Feb 2022 - Present, 1.5 years</b>
-                    <p>O filme tem previsão de estreia para 2026, mas sem uma data cravada.
-                        Além disso, este será o primeiro filme da franquia feito fora da Blue Sky,</p>
-                </div>
-            </div> -->
-
         </div>
 
         <div class="profile-description">
             <h2>Educação</h2>
             <div *ngFor="let education of educationList; let i = index" class="profile-desc-row">
-                <!-- Exibe o ícone de foto se não houver imagem selecionada -->
-                <i (click)="triggerFileInput()" *ngIf="!imageUrl">
-                    <span class="material-symbols-outlined">photo_camera</span>
-                     </i>
-    
-                <!-- Exibe a imagem selecionada quando houver uma URL -->
-                <img *ngIf="imageUrl" [src]="imageUrl" alt="Profile Picture">
-    
-                <!-- Input oculto para seleção de imagem -->
-                <input #fileInput type="file" accept="image/*" (change)="onImageSelected($event)" style="display:none">
-                   
-
+                <img [src]="imageUrlEdu">
                 <div>
                     <h3>{{ education.degree }}</h3>
                     <b>{{ education.school }}</b>
                     <b>{{ education.duration }}</b>
                     <i (click)="removeEducation(i)" class="delete-icon"><span
                             class="material-symbols-outlined">delete</span></i>
+                    <hr>
                 </div>
             </div>
 
@@ -177,15 +145,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div>
                 <span class="material-symbols-outlined" (click)="togglePanel('idioma')"> edit </span>
             </div>
         </div>
 
-        <div class="profile-sidebar">
-
-        </div>
         <!-- 
         <div class="profile-footer">
             <div class="sidebar-useful-links">
@@ -205,5 +170,60 @@
             </div>
         </div> -->
 
-
     </div>
+
+    <div class="profile-right">
+        <div class="sidebar-news">
+            <h2 class="mensagens-title">Mensagens</h2>
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://img.freepik.com/premium-psd/businesswoman-transparency-background-psd_693425-25413.jpg">
+                    <div>
+                        <h2>Marcela Soares</h2>
+                        <p>Recrutadora e Líder de Projetos </p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://img.freepik.com/premium-psd/smiling-business-man-isolated-white-isolated-background_176841-89878.jpg">
+                    <div>
+                        <h2>Sérgio Machado</h2>
+                        <p>Professor de Segurança de dados </p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://img.freepik.com/premium-photo/ai-generative-female-entrepreneur-with-smile-face-white-background_781958-10091.jpg">
+                    <div>
+                        <h2>Maria Paladino</h2>
+                        <p>Estudante de Eng. da Computação</p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4E03AQHYuOJkB-QAtQ/profile-displayphoto-shrink_800_800/0/1680251731412?e=2147483647&v=beta&t=WMvwVpUQSo2szEyvnum17bP5V7wM1Jf_HXhwkFXpUYY">
+                    <div>
+                        <h2>Beto Gomes</h2>
+                        <p>Coordenador de Análise de Riscos</p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <a [routerLink]="['/mensagens']" class="link">Ver Mais..</a>
+        </div>
+    </div>
+</div>

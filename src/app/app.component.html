@@ -64,15 +64,15 @@
 
 
 
-
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 <body>
   <nav class="navbar">
     <div class="navbar-left">
       <a href="index.html" class="logo"><img src="src/assets/logo.png"></a>
 
       <div class="search-box">
-        <i class="material-symbols-outlined"> </i>
-        <input type="text" placeholder="Search">
+        <i class="material-symbols-outlined"> search </i>
+        <input type="text" placeholder="Pesquisar">
       </div>
 
     </div>
@@ -93,35 +93,35 @@
         <div class="user-info">
           <img src="https://www.pngall.com/wp-content/uploads/5/Profile.png">
           <div>
-            <h3>Victor Garcia</h3>
-            <a [routerLink]="['/perfil']">See your profile</a>
+            <h3>Nome do Usuário</h3>
+            <a [routerLink]="['/perfil']">Ver seu perfil</a>
           </div>
         </div>
         <hr>
-        <a href="#" class="profile-menu-link">
-          <img src="src/feedback.png">
-          <p>Give Feedback</p>
-          <span></span>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> feedback </span>
+          <p>Feedback</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
         </a>
-        <a href="#" class="profile-menu-link">
-          <img src="src/feedback.png">
-          <p>Give Feedback</p>
-          <span></span>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined">settings </span>
+          <p>Configurações e Privacidade</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
         </a>
-        <a href="#" class="profile-menu-link">
-          <img src="src/feedback.png">
-          <p>Help & Support</p>
-          <span></span>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> help </span>
+          <p>Ajuda e Suporte</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
         </a>
-        <a href="#" class="profile-menu-link">
-          <img src="src/feedback.png">
-          <p>Display & Acessibility</p>
-          <span></span>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> mode_night </span>
+          <p>Exibição e Acessibilidade</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
         </a>
-        <a href="#" class="profile-menu-link">
-          <img src="src/feedback.png">
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> logout </span>
           <p>Lought</p>
-          <span></span>
+          <span [routerLink]="['/login']" class="material-symbols-outlined"> chevron_right </span>
         </a>
       </div>
     </div>
@@ -129,13 +129,9 @@
   </nav>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/test" routerLinkActive="active">Teste do Input e lista</button>
-    <button mat-menu-item routerLink="/itemdropdown" routerLinkActive="active">Dropdown</button>
-    <button mat-menu-item routerLink="/conecta" routerLinkActive="active">Conectar</button>
-
-
+   
     <button mat-menu-item routerLink="/home" routerLinkActive="active">
-      <mat-icon>home</mat-icon>
+    <mat-icon>home</mat-icon>
       Home
     </button>
     <button mat-menu-item routerLink="/perfil" routerLinkActive="active">

@@ -27,6 +27,25 @@
     font-family: bold;
 }
 
+.barra-de-rolagem {
+    max-height: 540px; /* Altura fixa para a área de notificações */
+    overflow-y: auto; /* Permite rolagem vertical quando necessário */
+    margin-top: 20px;
+    margin-right: auto;
+    
+}
+.barra-de-rolagem-conversa{
+    overflow-y: auto;
+    max-height: 420px;
+}
+.sd {
+    font-weight: 100%;
+    background-color: #ebc860;
+    border-radius: 30px;
+    padding: 8px 20px;
+    text-align: center;
+    margin-top: 10px;
+}
 .sidebar-people-row{
     display: flex;
     align-items: center;
@@ -42,6 +61,7 @@
     font-weight: 500;
     font-size: 16px;
     margin: 0;
+    color: black;
     
 }
 .sidebar-people-row p {
@@ -57,14 +77,11 @@
     font-weight: 700;
     margin: 0;
 }
-.sd {
-    font-weight: 100%;
-    background-color: #ebc860;
-    border-radius: 30px;
-    padding: 8px 20px;
-    text-align: center;
-    margin-top: 10px;
-}
+
+
+
+
+
 /*------main-content------*/
 .main-content {
     flex-basis: 50%;
@@ -76,36 +93,54 @@
     margin: 12px 0;
     font-size: 12px;
     border-radius: 15px;
+    height: 92%;
 }
-.sf{
+.fundo-conversa{
     font-weight: 100%;
     background-color: #ebc860;
     border-radius: 30px;
     padding: 8px 20px;
-    text-align: center;
     margin-top: 10px; 
+    height: 93%;
+    
 }
-.sf img{
-    width: 40px;
+.fundo-conversa img{
+    width: 60px;
+    border-radius: 50%;  
 }
-.sh{
+.fundo-conversa h2{
+    display: inline-block;
+    font-size: 23px; 
+    color: black;
+    padding-left: 20px;   
+}
+
+.post-mensagem{
     font-weight: 100%;
     background-color: #dee7e7;
     border-radius: 30px;  
+    width: 60%;  
+    margin-top: 35%; 
 }
-.sh p{
+.post-mensagem p{
     font-size: 12px;
     max-width: 500px;  
     text-align: left;
-    padding-left: -10px;
+    padding: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
 }
 .search-box {
-    background: #f0f2f5;
+    background: #fffaeb;
     width: 500px;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    padding: 0 15pxx;
+    padding: 0 10px; 
+    margin-right: 10px;  
 }
 .search-box i {
     width: 14px;
@@ -119,6 +154,7 @@
     border: 0;
 }
 
+
 /*------right-sidebar------*/
 .right-sidebar {
     flex-basis: 18%;
@@ -126,3 +162,4 @@
     position: sticky;
     top: 73px;
 }
+

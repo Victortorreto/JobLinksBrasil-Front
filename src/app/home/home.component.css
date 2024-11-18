@@ -12,6 +12,31 @@
     position: sticky;
     top: 73px;
 }
+.sidebar-profile-box {
+    background: #ebdeb6;
+    border-radius: 15px;
+}
+.sidebar-profile-box img{
+    border-radius: 15px;
+}
+.sidebar-profile-info {
+    padding: 0 25px;
+    font-size: 14px;
+}
+
+.sidebar-profile-info img {
+    width: 90px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+    margin-top: -45px;
+}
+
+.sidebar-profile-info h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
 
 /*------main-content------*/
 .main-content {
@@ -119,7 +144,7 @@
     background: #ebdeb6;
     padding: 20px 25px 5px;
     margin: 5px 0 15px;
-    border-radius: 15px;
+     border-radius: 15px;
 }
 
 .post-author {
@@ -201,11 +226,8 @@
 .post-activity-link i {
     width: 18px;
     margin-right: 8px;
-    color: aqua;
+    color: rgb(0, 0, 0);
 }
-
-
-
 
 /*------right-sidebar------*/
 .right-sidebar {
@@ -216,31 +238,46 @@
 }
 
 .sidebar-news {
-    background: #fff;
+    background: #ebdeb6;
     padding: 10px 25px;
+    border-radius: 15px;
 }
 
-.sidebar-info {
-    width: 15px;
-    float: right;
-    margin-top: 15px;
-}
-
-.sidebar-news h3 {
-    font-size: 18px;
+.sidebar-news h3 { 
+    font-size: 30px;  
     font-weight: 600;
-    color: #333;
-    margin: 10px 0 30px;
+    margin: 4px 0 10px;
+    text-align: center;
+    font-family: bold;
 }
 
-.siderbar-news a {
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
+
+.sd {
+    font-weight: 100%;
+    background-color: #ebc860;
+    border-radius: 30px;
+    text-align: center;
     margin-top: 10px;
-    margin-bottom: -5px;
+}
+.sidebar-people-row{
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+}
+.sidebar-people-row img{
+    width: 40px;
+    border-radius: 50%;
+    padding-left: 4px;
+}
+.sidebar-people-row h2{
+    font-size: 16px;
+    color: black;
+    top: 0;
+   
+}
+.sidebar-people-row p {
+    font-size: 14px;
+    
 }
 
-.sidebar-news span {
-    font-size: 12px;
-}
+

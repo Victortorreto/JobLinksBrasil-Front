@@ -107,6 +107,15 @@ body {
     align-items: center;
 }
 
+.search-box {
+    background: #fffaeb;
+    width: 500px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px; 
+    margin-right: 10px;  
+}
 .search-box i {
     width: 14px;
 }
@@ -117,7 +126,7 @@ body {
     padding: 8px;
     outline: none;
     border: 0;
-}
+} 
 .navbar-right {
     display: flex;
     align-items: center;
@@ -165,6 +174,7 @@ body {
 .user-info h3{
     font-weight: 500;
     margin-bottom: -7px;
+    font-size: 20px;
 }
 .user-info a {
     color: #c9dbf8;
@@ -191,9 +201,8 @@ body {
     width: 100%;
 }
 
-.profile-menu-link img {
-    width: 35px;
+.profile-menu-link span {
+    width: 10px;
     border-radius: 50%;
-    margin-right: 15px;
-
+    margin-right: 20px;
 }

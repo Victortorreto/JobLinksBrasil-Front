@@ -1,6 +1,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 <div class="container">
-  <div class="left-sidebar"></div>
+  <div class="left-sidebar">
+    <div class="sidebar-profile-box">
+      <img src="https://mrsec.udel.edu/files/2023/08/headshot-placeholder-lscpe.png" width="100%">
+      <div class="sidebar-profile-info">
+        <img src="https://www.pngall.com/wp-content/uploads/5/Profile.png">
+        <h1>Nome de Usuário</h1>
+        <p>Estudante de Análise de Desenvolvimento de Sistemas</p>
+        <p>Senai São Caetano do Sul</p>
+        <p>São Paulo, Brasil</p>
+      </div>
+    </div>
+  </div>
 
   <div class="main-content">
     <div class="create-post">
@@ -19,7 +30,9 @@
           </span>Video <input #videoInput type="file" accept="video/*" (change)="onFileChange($event, 'video')"
             style="display:none">
         </li>
-        <li (click)="triggerFileInput('doc')"><img src="src/event.png">Documento <input #documentoInput type="file"
+        <li (click)="triggerFileInput('doc')"><span class="material-symbols-outlined">
+          description
+          </span>Documento<input #documentoInput type="file"
             accept="documento/*" (change)="onFileChange($event, 'documento')" style="display:none"></li>
         <li><button (click)="postContent()">Postar</button></li>
       </div>
@@ -44,35 +57,35 @@
 
       <div class="post-stats">
         <div>
-          <img src="C:\Users\victo\OneDrive\Imagens\Capturas de tela\like.png">
-          <img src="src\assets\coracao.png">
-          <img src="src/parabens.png">
-          <span class="liked-users"> Zeze marcelo and 75 others</span>
+          <i class="material-symbols-outlined">thumb_up </i>
+          <i class="material-symbols-outlined"> favorite </i>
+          <i class="material-symbols-outlined"> sign_language </i>
+          <span class="liked-users"> Nenhuma reação</span>
         </div>
         <div>
-          <span>22 comments; 40 shares</span>
+          <span>0 Comentários, 0 Compartilhamentos</span>
         </div>
       </div>
       <div class="post-activity">
         <div>
-          <img src="https://img.freepik.com/premium-psd/businesswoman-transparency-background-psd_693425-25413.jpg"
+          <img [src]="post.userPhoto" alt="Post Author Photo"
             class="post-activity-user-icon">
-          <img src="src/arrow_drop_down.png" class="post-activity-arrow-icon">
+          <i class="material-symbols-outlined">arrow_drop_down</i>
         </div>
         <div class="post-activity-link">
-          <img src="src/like.png">
+          <i class="material-symbols-outlined">thumb_up </i>
           <span>Gostei</span>
         </div>
         <div class="post-activity-link">
-          <img src="src/comment.png">
+          <i class="material-symbols-outlined">comment</i>
           <span>Comentário</span>
         </div>
         <div class="post-activity-link">
-          <img src="src/share.png">
+          <i class="material-symbols-outlined"> share_windows </i>
           <span>Compartilhar</span>
         </div>
         <div class="post-activity-link">
-          <img src="src/send.png">
+          <i class="material-symbols-outlined"> send </i>
           <span>Enviar</span>
         </div>
       </div>
@@ -139,9 +152,12 @@
           <small>2 de agosto</small>
         </div>
       </div>
-      <p>O propósito básico de uma reunião é facilitar a comunicação entre os participantes.
-        É nesse momento que ideias são compartilhadas,
-        problemas são discutidos e soluções são encontradas.</p>
+      <p>Local: Santo André-SP</p>
+      <p>Tipo de Contratação: CLT</p>
+      <p> Nível: Júnior e Sênior</p>
+      <p>Como Programador, você será responsável por escrever e manter código de qualidade, 
+        colaborar com outros membros da equipe para projetar soluções de software escaláveis e eficientes, 
+        além de contribuir para a melhoria contínua dos nossos produtos e serviços.</p>
       <img
         src="https://static.wixstatic.com/media/bdaefe_d9d428fb0c834d978cc3316169393cb0~mv2.png/v1/fill/w_842,h_595,al_c/bdaefe_d9d428fb0c834d978cc3316169393cb0~mv2.png"
         width="100%">
@@ -181,31 +197,64 @@
         </div>
       </div>
     </div>
-
   </div>
 
 
 
   <div class="right-sidebar">
     <div class="sidebar-news">
-        <img src="https://ghs.guam.gov/sites/default/files/news-icon.png" class="sidebar-info">
-        <h3>Trending News</h3>
-        <a>Sérgio Gilberto Marçal, de 64 anos </a>
-        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+      <h3>Notificações</h3>
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://www.westsidetile.com/wp-content/uploads/2019/02/wst_3-min.jpg">
+          <div>
+            <h2>Maria Soares</h2>
+            <p>Compartilhou uma nova publicação </p>
+          </div>
+        </div>
+      </div>
 
-        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
-        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://cursos.igrowacademy.co/wp-content/uploads/2022/07/etiqueta-negocios.jpg">
+          <div>
+            <h2>Julia Machedo</h2>
+            <p>Curtiu a publicação de Sócrates </p>
+          </div>
+        </div>
+      </div>
 
-        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
-        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://th.bing.com/th/id/OIP.azz1N6JuUUjxdPZVhc82egHaHa?rs=1&pid=ImgDetMain">
+          <div>
+            <h2>Ana Flanco</h2>
+            <p>Comentou em uma publicação</p>
+          </div>
+        </div>
+      </div>
 
-        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
-        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://img.freepik.com/premium-psd/smiling-business-man-isolated-white-isolated-background_176841-89878.jpg">
+          <div>
+            <h2>Zeze Marcelo</h2>
+            <p>Curtiu a publicação de Maria Soares</p>
+          </div>
+        </div>
+      </div>
 
-        <a href="#">Sérgio Gilberto Marçal, de 64 anos </a>
-        <span>Hospital Santo Amaro (HSA), em Guarujá (SP).</span>
-
-        <a href="#" class="read-more-link">Read More</a>
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://media.licdn.com/dms/image/D4E03AQHYuOJkB-QAtQ/profile-displayphoto-shrink_800_800/0/1680251731412?e=2147483647&v=beta&t=WMvwVpUQSo2szEyvnum17bP5V7wM1Jf_HXhwkFXpUYY">
+          <div>
+            <h2>Antônio Souza</h2>
+            <p>Conseguiu um novo emprego </p>
+          </div>
+        </div>
+      </div>
+      <a [routerLink]="['/notificacao']" class="read-more-link">Ver Mais..</a>
+           
     </div>
-
+  </div>
 </div>

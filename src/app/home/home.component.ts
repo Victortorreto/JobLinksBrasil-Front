@@ -9,7 +9,7 @@ export class HomeComponent {
   @ViewChild('photoInput') photoInput!: ElementRef;
   @ViewChild('videoInput') videoInput!: ElementRef;
   
-  userPhoto: string = 'https://img.freepik.com/premium-psd/businesswoman-transparency-background-psd_693425-25413.jpg'; // Foto do usuário
+  userPhoto: string = "https://www.pngall.com/wp-content/uploads/5/Profile.png"; // Foto do usuário
   newPostContent: string = '';
   selectedPhoto: File | null = null;
   selectedVideo: File | null = null;
@@ -44,7 +44,7 @@ export class HomeComponent {
     }
 
     const newPost = {
-      userName: 'Benjamin Leo', // Nome do autor
+      userName: 'Nome Do Usuário', // Nome do autor
       userPhoto: this.userPhoto, // Foto do autor
       content: this.newPostContent.trim(), // Texto do post
       photo: this.selectedPhoto ? URL.createObjectURL(this.selectedPhoto) : null, // Foto postada

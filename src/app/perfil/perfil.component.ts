@@ -13,21 +13,21 @@ export class PerfilComponent {
   isSkillslOpen: boolean = false;
   isLanguagelOpen: boolean = false;
 
-  aboutText: string = 'Você é o meu amor, a razão pela qual o meu coração bate com entusiasmo a cada novo dia...';
+  aboutText: string = 'Escreva aqui sobre você, seus hobby, o que está buscando e seus objetivos.';
  
   // Dados dinâmicos de Experiência
   experiences = [
-    { position: 'Lead Front-End Developer', company: 'Microsoft', duration: 'Feb 2022 - Present', description: 'Descrição do cargo.' },
-    { position: 'Junior Developer', company: 'Google', duration: 'Jan 2020 - Jan 2022', description: 'O filme tem previsão de estreia para 2026, mas sem uma data cravada. Além disso, este será o primeiro filme da franquia feito fora da Blue Sky.' }
+    { position: 'Lead Front-End Developer', company: 'Microsoft', duration: 'Feb 2022 - Present', description: 'Programador Senior.' },
+    { position: 'Junior Developer', company: 'Google', duration: 'Jan 2020 - Jan 2022', description: 'Programador Junior, realizava tarefas de banco de dados, tratamentos de dados e outros.' }
   ];
 
   // Dados dinâmicos de Educação
   educationList = [
-    { degree: 'Bacharel em Ciência da Computação', school: 'Universidade XYZ', duration: '2016 - 2020' }
+    { degree: 'Bacharel em Ciência da Computação', school: 'Universidade USP-SP', duration: '2016 - 2020' }
   ];
 
   // Dados de Habilidades
-  skills = ['JavaScript', 'HTML', 'CSS', 'React', 'Angular'];
+  skills = ['JavaScript', 'HTML', 'CSS', 'Java', 'Angular'];
 
   // Dados de Idiomas
   languages = ['English', 'Portuguese'];
@@ -38,10 +38,13 @@ export class PerfilComponent {
   newSkill = '';
   newLanguage = '';
 
-
-
-   imageUrl: string | ArrayBuffer | null = null; // Armazena a URL da imagem ou null
+  imageUrlExpe: string = 'src/work-experience.png';
+  imageUrlEdu: string = 'assets\education-forma.png';
+  imageUrlFundo: string | ArrayBuffer | null = null;
+  imageUrl: string | ArrayBuffer | null = null; // Armazena a URL da imagem ou null
   @ViewChild('fileInput') fileInput!: ElementRef; // Referência ao input de arquivo
+  @ViewChild('fileInputFundo') fileInputFundo!: ElementRef; 
+ 
 
   // Função chamada quando uma imagem é selecionada
   onImageSelected(event: any): void {
@@ -49,18 +52,36 @@ export class PerfilComponent {
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        this.imageUrl = reader.result;  // Armazena a URL da imagem (base64)
+        this.imageUrl = reader.result; 
       };
-      reader.readAsDataURL(file);  // Lê o arquivo como URL base64
+      reader.readAsDataURL(file);  
     }
   }
 
   // Função para abrir o input de arquivo ao clicar no ícone
   triggerFileInput(): void {
-    this.fileInput.nativeElement.click();  // Aciona o clique no input de arquivo
+    const fileInput = this.fileInput.nativeElement as HTMLInputElement;
+    fileInput.click(); // Aciona o clique no input de arquivo
   }
 
-     // Função que alterna entre o painel de Educação e o de Experiência
+   // Função chamada quando uma imagem é selecionada
+   onImageSelectedFundo(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imageUrlFundo = reader.result;  
+      };
+      reader.readAsDataURL(file);  
+    }
+  }
+
+  triggerFileInputFundo(): void {
+    const fileInputFundo = this.fileInputFundo.nativeElement as HTMLInputElement;
+    fileInputFundo.click();
+  }
+
+  // Função que alterna entre o painel de Educação e o de Experiência
   togglePanel(panelType: string) {
     if (panelType === 'edu') {
       this.isPanelOpen = !this.isPanelOpen;  // Alterna o painel de Educação

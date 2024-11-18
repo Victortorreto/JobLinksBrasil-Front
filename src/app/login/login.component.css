@@ -1,0 +1,56 @@
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Contêiner para os círculos */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+  }
+  .tela-fundo{
+    justify-content: left;
+    align-items: left;
+  }
+  
+  .game-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-right: 30px;
+  }
+  
+  /* Estilo dos círculos */
+  .game-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .game-circle:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+  }
+  
+  /* Estilo do texto dentro do círculo */
+  .game-circle span {
+    text-align: center;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+  
