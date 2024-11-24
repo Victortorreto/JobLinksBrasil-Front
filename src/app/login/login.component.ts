@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
+}
+
   email: string = '';
   senha: string = '';
 
@@ -30,3 +33,4 @@ export class LoginComponent {
     });
   }
 }
+

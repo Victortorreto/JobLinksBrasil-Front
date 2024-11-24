@@ -1,0 +1,263 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<div class="container">
+  <div class="left-sidebar">
+    <div class="sidebar-profile-box">
+      <img src="https://mrsec.udel.edu/files/2023/08/headshot-placeholder-lscpe.png" width="100%">
+      <div class="sidebar-profile-info">
+        <img src="https://www.pngall.com/wp-content/uploads/5/Profile.png">
+        <h1>Nome de Usuário</h1>
+        <p>Estudante de Análise de Desenvolvimento de Sistemas</p>
+        <p>Senai São Caetano do Sul</p>
+        <p>São Paulo, Brasil</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="create-post">
+      <div class="create-post-input">
+        <img [src]="userPhoto" alt="User Photo">
+        <textarea rows="2" [(ngModel)]="newPostContent" placeholder="Escreva um post"></textarea>
+      </div>
+      <div class="create-post-links">
+        <li (click)="triggerFileInput('photo')"><span class="material-symbols-outlined">
+            photo_camera
+          </span>Foto<input #photoInput type="file" accept="image/*" (change)="onFileChange($event, 'photo')"
+            style="display:none">
+        </li>
+        <li (click)="triggerFileInput('video')"><span class="material-symbols-outlined">
+            videocam
+          </span>Video <input #videoInput type="file" accept="video/*" (change)="onFileChange($event, 'video')"
+            style="display:none">
+        </li>
+        <li (click)="triggerFileInput('doc')"><span class="material-symbols-outlined">
+          description
+          </span>Documento<input #documentInput type="file" accept="document/*" (change)="onFileChange($event, 'doc')" style="display: none">
+        </li>
+        <li><button (click)="postContent()">Postar</button></li>
+      </div>
+    </div>
+
+    <div class="sort-by">
+      <hr>
+      <p>Sort by: <span>top <i class="material-symbols-outlined"> arrow_drop_down</i></span></p>
+    </div>
+
+    <div *ngFor="let post of posts" class="post">
+      <div class="post-author">
+        <img [src]="post.userPhoto" alt="Post Author Photo">
+        <div>
+          <h1>{{ post.userName }}</h1>
+          <small>{{ post.timestamp }}</small>
+        </div>
+      </div>
+      <p>{{ post.content }}</p>
+      <img *ngIf="post.photo" [src]="post.photo" alt="Post Photo" width="100%">
+      <video *ngIf="post.video" [src]="post.video" controls width="100%"></video>
+
+      <div class="post-stats">
+        <div>
+          <i class="material-symbols-outlined">thumb_up </i>
+          <i class="material-symbols-outlined"> favorite </i>
+          <i class="material-symbols-outlined"> sign_language </i>
+          <span class="liked-users"> Nenhuma reação</span>
+        </div>
+        <div>
+          <span>0 Comentários, 0 Compartilhamentos</span>
+        </div>
+      </div>
+      <div class="post-activity">
+        <div>
+          <img [src]="post.userPhoto" alt="Post Author Photo"
+            class="post-activity-user-icon">
+          <i class="material-symbols-outlined">arrow_drop_down</i>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">thumb_up </i>
+          <span>Gostei</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">comment</i>
+          <span>Comentário</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> share_windows </i>
+          <span>Compartilhar</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> send </i>
+          <span>Enviar</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="post">
+      <div class="post-author">
+        <img src="https://www.westsidetile.com/wp-content/uploads/2019/02/wst_3-min.jpg">
+        <div>
+          <h1>Maria Soares</h1>
+          <small>Fundador e CEO do grupo | Angel Investor</small>
+          <small>4 de Novembro</small>
+        </div>
+      </div>
+      <p>O propósito básico de uma reunião é facilitar a comunicação entre os participantes.
+        É nesse momento que ideias são compartilhadas,
+        problemas são discutidos e soluções são encontradas.</p>
+      <img src="https://th.bing.com/th/id/R.c214d38613fd5d05c340a72d67674ba8?rik=UupPmyyXnfNqeg&pid=ImgRaw&r=0"
+        width="100%">
+
+      <div class="post-stats">
+        <div>
+          <i class="material-symbols-outlined">thumb_up </i>
+          <i class="material-symbols-outlined"> favorite </i>
+          <i class="material-symbols-outlined"> sign_language </i>
+          <span class="liked-users"> Zeze marcelo e 75 outros</span>
+        </div>
+        <div>
+          <span>24 Comentários, 8 Compartilhamentos</span>
+        </div>
+      </div>
+      <div class="post-activity">
+        <div>
+          <img src="https://www.westsidetile.com/wp-content/uploads/2019/02/wst_3-min.jpg"
+            class="post-activity-user-icon">
+          <i class="material-symbols-outlined">arrow_drop_down</i>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">thumb_up </i>
+          <span>Gostei</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">comment</i>
+          <span>Comentário</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> share_windows </i>
+          <span>Compartilhar</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> send </i>
+          <span>Enviar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-author">
+        <img src="https://d1fdloi71mui9q.cloudfront.net/iUHuHtjRSu6lQJ0W8tbw_uRpKJ0Bc0wGyB27n">
+        <div>
+          <h1>Sócrates</h1>
+          <small>Recrutador e Analista do grupo | Microsoft </small>
+          <small>2 de agosto</small>
+        </div>
+      </div>
+      <p>Local: Santo André-SP</p>
+      <p>Tipo de Contratação: CLT</p>
+      <p> Nível: Júnior e Sênior</p>
+      <p>Como Programador, você será responsável por escrever e manter código de qualidade, 
+        colaborar com outros membros da equipe para projetar soluções de software escaláveis e eficientes, 
+        além de contribuir para a melhoria contínua dos nossos produtos e serviços.</p>
+      <img
+        src="https://static.wixstatic.com/media/bdaefe_d9d428fb0c834d978cc3316169393cb0~mv2.png/v1/fill/w_842,h_595,al_c/bdaefe_d9d428fb0c834d978cc3316169393cb0~mv2.png"
+        width="100%">
+
+      <div class="post-stats">
+        <div>
+          <i class="material-symbols-outlined">thumb_up </i>
+          <i class="material-symbols-outlined"> favorite </i>
+          <i class="material-symbols-outlined"> sign_language </i>
+          <span class="liked-users"> Julia Machedo e 103 outros</span>
+        </div>
+        <div>
+          <span>50 Comentários, 30 Compartilhamentos</span>
+        </div>
+      </div>
+      <div class="post-activity">
+        <div>
+          <img src="https://d1fdloi71mui9q.cloudfront.net/iUHuHtjRSu6lQJ0W8tbw_uRpKJ0Bc0wGyB27n"
+            class="post-activity-user-icon">
+          <i class="material-symbols-outlined">arrow_drop_down</i>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">thumb_up </i>
+          <span>Gostei</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined">comment</i>
+          <span>Comentário</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> share_windows </i>
+          <span>Compartilhar</span>
+        </div>
+        <div class="post-activity-link">
+          <i class="material-symbols-outlined"> send </i>
+          <span>Enviar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="right-sidebar">
+    <div class="sidebar-news">
+      <h3>Notificações</h3>
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://www.westsidetile.com/wp-content/uploads/2019/02/wst_3-min.jpg">
+          <div>
+            <h2>Maria Soares</h2>
+            <p>Compartilhou uma nova publicação </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://cursos.igrowacademy.co/wp-content/uploads/2022/07/etiqueta-negocios.jpg">
+          <div>
+            <h2>Julia Machedo</h2>
+            <p>Curtiu a publicação de Sócrates </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://th.bing.com/th/id/OIP.azz1N6JuUUjxdPZVhc82egHaHa?rs=1&pid=ImgDetMain">
+          <div>
+            <h2>Ana Flanco</h2>
+            <p>Comentou em uma publicação</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://img.freepik.com/premium-psd/smiling-business-man-isolated-white-isolated-background_176841-89878.jpg">
+          <div>
+            <h2>Zeze Marcelo</h2>
+            <p>Curtiu a publicação de Maria Soares</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sd">
+        <div class="sidebar-people-row">
+          <img src="https://media.licdn.com/dms/image/D4E03AQHYuOJkB-QAtQ/profile-displayphoto-shrink_800_800/0/1680251731412?e=2147483647&v=beta&t=WMvwVpUQSo2szEyvnum17bP5V7wM1Jf_HXhwkFXpUYY">
+          <div>
+            <h2>Antônio Souza</h2>
+            <p>Conseguiu um novo emprego </p>
+          </div>
+        </div>
+      </div>
+      <a [routerLink]="['/notificacao']" class="read-more-link">Ver Mais..</a>
+           
+    </div>
+  </div>
+</div>
+<footer>
+  <p class="direitos">Todos os direitos reservados à JobLink's Brasil</p>
+</footer>

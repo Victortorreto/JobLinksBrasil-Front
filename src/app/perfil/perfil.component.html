@@ -1,1 +1,233 @@
-<p>perfil works!</p>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<div class="container">
+    <div class="profile-main">
+        <div class="profile-container">
+            <div class="fundo" (click)="triggerFileInputFundo()">
+                <span class="material-symbols-outlined">photo_camera</span>
+                <!-- Exibe a imagem selecionada dentro da div fundo -->
+                <img *ngIf="imageUrlFundo" [src]="imageUrlFundo" />
+                <input #fileInputFundo type="file" accept="image/*" (change)="onImageSelectedFundo($event)" style="display:none">
+            </div>
+            <div class="profile-container-inner">
+                <i (click)="triggerFileInput()" class="profile-pic" *ngIf="!imageUrl">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                </i>
+
+                <!-- Exibe a imagem selecionada quando houver uma URL -->
+                <img *ngIf="imageUrl" [src]="imageUrl" class="profile-pic" alt="Profile Picture">
+
+                <!-- Input oculto para seleção de imagem -->
+                <input #fileInput type="file" accept="image/*" (change)="onImageSelected($event)" style="display:none">
+
+                <h1>Nome de Usuário</h1>
+                <b>Estudante de Análise de Desenvolvimento de Sistemas</b>
+                <p>Senai São Caetano do Sul</p>
+                <p>São Paulo, Brasil</p>
+                <a [routerLink]="['/curriculo']">Ver seu curriculo</a>
+            </div>
+        </div>
+
+        <div class="profile-description">
+            <h2>Sobre</h2>
+            <p *ngIf="!isSobreOpen">{{ aboutText }}</p> <!-- Exibe o texto da descrição -->
+
+            <div class="textarea-container" *ngIf="isSobreOpen">
+                <textarea [(ngModel)]="aboutText" placeholder="Escreva sobre você..."></textarea>
+                <!-- Campo de edição -->
+                <button class="close-button" (click)="closePanel()">Fechar</button>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('sobre')"> edit </span>
+            </div>
+        </div>
+
+        <div class="profile-description">
+            <h2>Experiência</h2>
+            <div *ngFor="let experience of experiences; let i = index" class="profile-desc-row">
+                <img [src]="imageUrlExpe">
+                <div>
+                    <h3>{{ experience.position }}</h3>
+                    <b>{{ experience.company }}</b>
+                    <b>{{ experience.duration }}</b>
+                    <p>{{ experience.description }}</p>
+                    <i (click)="removeExperience(i)" class="delete-icon"><span class="material-symbols-outlined">delete
+                        </span></i>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="Editar">
+                <span class="material-symbols-outlined" (click)="togglePanel('exper')"> edit </span>
+            </div>
+
+
+            <div class="add-education-panel" *ngIf="isExperOpen">
+                <div class="panel-content">
+                    <div class="add-experience">
+                        <h3>Nova Experiência</h3>
+                        <input type="text" [(ngModel)]="newExperience.position" placeholder="Cargo">
+                        <input type="text" [(ngModel)]="newExperience.company" placeholder="Empresa">
+                        <input type="text" [(ngModel)]="newExperience.duration" placeholder="Duração">
+                        <input type="text" [(ngModel)]="newExperience.description" placeholder="Descrição">
+                        <button (click)="addExperience()">Adicionar</button>
+                        <button (click)="closePanel()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-description">
+            <h2>Educação</h2>
+            <div *ngFor="let education of educationList; let i = index" class="profile-desc-row">
+                <img [src]="imageUrlEdu">
+                <div>
+                    <h3>{{ education.degree }}</h3>
+                    <b>{{ education.school }}</b>
+                    <b>{{ education.duration }}</b>
+                    <i (click)="removeEducation(i)" class="delete-icon"><span
+                            class="material-symbols-outlined">delete</span></i>
+                    <hr>
+                </div>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('edu')"> edit </span>
+            </div>
+
+            <div class="add-education-panel" *ngIf="isPanelOpen">
+                <div class="panel-content">
+                    <h3> Nova Educação</h3>
+                    <input type="text" [(ngModel)]="newEducation.degree" placeholder="Grau">
+                    <input type="text" [(ngModel)]="newEducation.school" placeholder="Instituição">
+                    <input type="text" [(ngModel)]="newEducation.duration" placeholder="Duração">
+                    <button (click)="addEducation()">Adicionar</button>
+                    <button (click)="closePanel()">Fechar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="profile-description">
+            <h2>Habilidades</h2>
+
+            <div *ngFor="let skill of skills">
+                <a class="skills-btn">{{ skill }}</a>
+            </div>
+
+            <div class="add-education-panel" *ngIf="isSkillslOpen">
+                <div class="panel-content">
+                    <div class="add-skills">
+                        <input type="text" [(ngModel)]="newSkill" placeholder="Nova Habilidade">
+                        <button (click)="addSkill()">Adicionar</button>
+                        <button (click)="closePanel()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('habi')"> edit </span>
+            </div>
+        </div>
+
+        <div class="profile-description">
+            <h2>Idiomas</h2>
+
+            <div *ngFor="let language of languages">
+                <a class="language-btn">{{ language }}</a>
+            </div>
+
+            <div class="add-education-panel" *ngIf="isLanguagelOpen">
+                <div class="panel-content">
+                    <div class="add-languages">
+                        <input type="text" [(ngModel)]="newLanguage" placeholder="Novo Idioma">
+                        <button (click)="addLanguage()">Adicionar</button>
+                        <button (click)="closePanel()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span class="material-symbols-outlined" (click)="togglePanel('idioma')"> edit </span>
+            </div>
+        </div>
+
+        <!-- 
+        <div class="profile-footer">
+            <div class="sidebar-useful-links">
+                <a>About</a>
+                <a>Acessibility</a>
+                <a>Help Center</a>
+                <a>Privacy Policy</a>
+                <a>Advertising</a>
+                <a>Get the App</a>
+                <a>More</a>
+
+                <div class="copyright-msg">
+                    <img src="https://th.bing.com/th/id/R.83067b6e0e8720585d90eac6934117c0?rik=KkHl3d6KBw2NWQ&riu=http%3a%2f%2fmarcuselliott.co.uk%2fwp-content%2fuploads%2f2016%2f08%2fIn-2C-48px-R.png&ehk=bTyFylYhoBx%2bQ4w%2broKv9Vm5VE1%2b%2bY9L6ICSE6ytoSY%3d&risl=&pid=ImgRaw&r=0"
+                        class="imagem">
+                    <p>2024 JobLink's Brasil Corporation. All rights reserved.</p>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+
+    <div class="profile-right">
+        <div class="sidebar-news">
+            <h2 class="mensagens-title">Mensagens</h2>
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://img.freepik.com/premium-psd/businesswoman-transparency-background-psd_693425-25413.jpg">
+                    <div>
+                        <h2>Marcela Soares</h2>
+                        <p>Recrutadora e Líder de Projetos </p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://img.freepik.com/premium-psd/smiling-business-man-isolated-white-isolated-background_176841-89878.jpg">
+                    <div>
+                        <h2>Sérgio Machado</h2>
+                        <p>Professor de Segurança de dados </p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://img.freepik.com/premium-photo/ai-generative-female-entrepreneur-with-smile-face-white-background_781958-10091.jpg">
+                    <div>
+                        <h2>Maria Paladino</h2>
+                        <p>Estudante de Eng. da Computação</p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sd">
+                <div class="sidebar-people-row">
+                    <img
+                        src="https://media.licdn.com/dms/image/D4E03AQHYuOJkB-QAtQ/profile-displayphoto-shrink_800_800/0/1680251731412?e=2147483647&v=beta&t=WMvwVpUQSo2szEyvnum17bP5V7wM1Jf_HXhwkFXpUYY">
+                    <div>
+                        <h2>Beto Gomes</h2>
+                        <p>Coordenador de Análise de Riscos</p>
+                        <a href="">Conversar</a>
+                    </div>
+                </div>
+            </div>
+
+            <a [routerLink]="['/mensagens']" class="link">Ver Mais..</a>
+        </div>
+    </div>
+</div>
+<footer>
+    <p class="direitos">Todos os direitos reservados à JobLink's Brasil</p>
+</footer>
