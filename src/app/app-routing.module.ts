@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'conecta', component:ConectaComponent},  
   {path: 'login', component:LoginComponent},
   {path: 'registro', component:RegistroComponent},

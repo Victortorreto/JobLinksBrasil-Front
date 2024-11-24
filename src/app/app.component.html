@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 <body>
-  <nav class="navbar">
+  <nav class="navbar" *ngIf="router.url !== '/login' && router.url !== '/registro'">
     <div class="navbar-left">
       <a href="index.html" class="logo"><img src="logo.png"></a>
 

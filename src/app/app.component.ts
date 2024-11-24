@@ -17,7 +17,7 @@ export class AppComponent {
      this.isMenuOpen = !this.isMenuOpen; // Alterna entre true/false
    }
 
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
 
   navigateToPage(path: string): void {
     this.router.navigate([path]);

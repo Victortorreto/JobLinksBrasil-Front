@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  
-}
 
   email: string = '';
   senha: string = '';
@@ -23,7 +21,7 @@ export class LoginComponent {
       next: (response) => {
         console.log('Login bem-sucedido', response);
         // Redireciona para a página principal após login bem-sucedido
-        this.router.navigate(['/vagas']);
+        this.router.navigate(['/home']);
       },
       error: (error) => {
         console.log(credenciais)
