@@ -1,0 +1,272 @@
+<div class="container">
+    <div class="left-sidebar">
+        <div class="sidebar-profile-box">
+            <img src="https://mrsec.udel.edu/files/2023/08/headshot-placeholder-lscpe.png" width="100%">
+            <div class="sidebar-profile-info">
+                <img src="https://www.pngall.com/wp-content/uploads/5/Profile.png">
+                <h1>Nome de Usuário</h1>
+                <p>Estudante de Análise de Desenvolvimento de Sistemas</p>
+                <p>Senai São Caetano do Sul</p>
+                <p>São Paulo, Brasil</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <div class="busca-curriculo">
+            <div class="foto-integrante">
+                <div class="integrante">
+                    <img src="afonso.png">
+                    <h3>Afonso Gomes</h3>
+                    <a (click)="toggleCurriculoAfonso()">Currículo</a>
+                </div>
+            
+                <div class="integrante">
+                    <img src="romulo.png">
+                    <h3>Rômulo Franco</h3>
+                    <a (click)="toggleCurriculoRomulo()">Currículo</a>
+                </div>
+            
+                <div class="integrante">
+                    <img src="victor.png">
+                    <h3>Victor Garcia</h3>
+                    <a (click)="toggleCurriculoVictor()">Currículo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="curriculo" *ngIf="mostrarCurriculoAfonso">
+            <!-- Cabeçalho -->
+            <div class="header">
+                <div class="foto">
+                    <img src="afonso.png" alt="Foto de Perfil">
+                </div>
+                <div class="info">
+                    <h1>Afonso Pereira Gomes</h1>
+                    <p class="cargo">Desenvolvedor Fullstack</p>
+                    <p class="contato">Telefone: (11) 98650-3341 </p>
+                    <p class="localizacao">Riberão Pires-SP</p>
+                    <p class="email">PGomes.Afonso00gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Sobre -->
+            <section class="sobre">
+                <h2>Sobre</h2>
+                <p>Minha trajetória profissional começou com aprendizagem em eletroeletrônico. 
+                    Atualmente, estudo análise e desenvolvimento de sistemas. 
+                    Sou uma pessoa gentil e que gosta de ver as pessoas ao meu redor alegres. 
+                    Aprender faz parte do meu dia a dia e os desafios me mantém sempre motivado a descobrir as melhores soluções
+                </p>
+            </section>
+
+            <!-- Experiência Profissional -->
+            <section class="experiencia">
+                <h2>Experiência Profissional</h2>
+                <div class="experiencia-item">
+                    <h3>Estagiário Fullstack</h3>
+                    <p class="empresa">Datawake Digital</p>
+                    <p class="ano">Jul-2024 - Atual</p>
+                    <ul>
+                        <li>Desenvolvimento de interfaces com HTML, CSS e JavaScript</li>
+                        <li>Criação de páginas responsivas utilizando frameworks como React</li>
+                        <li>Integração com APIs externas</li>
+                    </ul>
+                </div>
+                <div class="experiencia-item">
+                    <h3>Eletricista</h3>
+                    <p class="empresa">NHJ do Brasil</p>
+                    <p class="ano">2022 - 2024</p>
+                    <ul>
+                        <li>Instalação e Manutenção Elétrica</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Educação -->
+            <section class="educacao">
+                <h2>Educação</h2>
+                <div class="educacao-item">
+                    <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+                    <p class="instituicao">Senai São Caetano</p>
+                    <p class="ano">Jan-2023/ Dez-2024</p>
+                </div>
+
+                <div class="educacao-item">
+                    <h3>Técnico Eletroeletrônico</h3>
+                    <p class="instituicao">Senai Jairo Candido</p>
+                    <p class="ano">Jan-2020/ Dez-2021</p>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section class="habilidades">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>HTML, CSS, JavaScript, Java</li>
+                    <li>React, Node.js, API REST</li>
+                    <li>Mongo DB, NoSQL, MySQL, Banco de Dados</li>
+                    <li>Spring Security, Boot, Framework</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="curriculo" *ngIf="mostrarCurriculoRomulo">
+            <!-- Cabeçalho -->
+            <div class="header">
+                <div class="foto">
+                    <img src="romulo.png" alt="Foto de Perfil">
+                </div>
+                <div class="info">
+                    <h1>Rômulo Franco Oliveira</h1>
+                    <p class="cargo"> Analista de Dados</p>
+                    <p class="contato">Telefone: (11)94461-4809</p>
+                    <p class="localizacao">Endereço: 09330-801 Mauá - SP</p>
+                    <p class="email">romulofrancooliveiragmail.com</p>
+                </div>
+            </div>
+
+            <!-- Sobre -->
+            <section class="sobre">
+                <h2>Sobre</h2>
+                <p> Experiência no setor Comercial com atividades voltadas no 
+                    acompanhamento no ciclo de vendas: digitação de pedidos, 
+                    cadastro de promoções e ressarcimento. Assistente de TI com 
+                    atividades voltadas para montagem e manutenção de 
+                    computadores, rede de computadores e operações em banco de 
+                    dados Oracle, criação e manutenção de relatórios no TARGIT BI.</p>
+            </section>
+
+            <!-- Experiência Profissional -->
+            <section class="experiencia">
+                <h2>Experiência Profissional</h2>
+                <div class="experiencia-item">
+                    <h3>Assistente de T.I</h3>
+                    <p class="empresa">Kozzy Alimentos</p>
+                    <p class="ano">Mai/2024 – atual</p>
+                    <ul>
+                        <li>Montagem e manutenção de computadores</li>
+                        <li>Auxílio ao time de vendas com sistema</li>
+                        <li>Operações no banco de dados</li>
+                    </ul>
+                </div>
+                <div class="experiencia-item">
+                    <h3> Assistente Adminstrativo(Comercial)</h3>
+                    <p class="empresa">Kozzy Alimentos</p>
+                    <p class="ano">Jan/2023 – abr/2024</p>
+                    <ul>
+                        <li>Digitação de pedidos</li>
+                        <li>Cadastro e Apuração de Promoções</li>
+                        <li>Ressarcimento de fornecedores</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Educação -->
+            <section class="educacao">
+                <h2>Educação</h2>
+                <div class="educacao-item">
+                    <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+                    <p class="instituicao">Senai São Caetano</p>
+                    <p class="ano">Jan-2023/ Dez-2024</p>
+                </div>
+
+                <div class="educacao-item">
+                    <h3>Técnico Mecatrônica</h3>
+                    <p class="instituicao">Senai São Caetano</p>
+                    <p class="ano">Jan-2020/ Dez-2021</p>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section class="habilidades">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>HTML, CSS, JavaScript, Java</li>
+                    <li>React, Node.js</li>
+                    <li>Pacote Office</li>
+                    <li>Montagem e manutenção de 
+                        computadores</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="curriculo" *ngIf="mostrarCurriculoVictor">
+            <!-- Cabeçalho -->
+            <div class="header">
+                <div class="foto">
+                    <img src="victor.png" alt="Foto de Perfil">
+                </div>
+                <div class="info">
+                    <h1>Victor Albuquerque Garcia</h1>
+                    <p class="cargo">Estágio Técnico </p>
+                    <p class="contato">Telefone: (11) 99321-9613 </p>
+                    <p class="localizacao">Santo André-SP</p>
+                    <p class="email">victoralbugarcia09gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Sobre -->
+            <section class="sobre">
+                <h2>Sobre</h2>
+                <p>Minha primeira experiência foi como jovem aprendiz, foi onde desenvolvi minhas habilidades de 
+                    automação e mecatrônica que desempenhei atividades de Manutenção, instalações elétricas, sou 
+                    um garoto que estou sempre em busca de melhorar e me desafiar a novas experiências  </p>
+            </section>
+
+            <!-- Experiência Profissional -->
+            <section class="experiencia">
+                <h2>Experiência Profissional</h2>
+                <div class="experiencia-item">
+                    <h3>Aprendiz</h3>
+                    <p class="empresa">General Motors-GM</p>
+                    <p class="ano">Jan-2023/ Jun-2024</p>
+                    <ul>
+                        <li>Trocas de Garras-Fanuc</li>
+                        <li>Manutenção preventiva e corretiva(AGV)</li>
+                        <li>Instalações Elétricas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Educação -->
+            <section class="educacao">
+                <h2>Educação</h2>
+                <div class="educacao-item">
+                    <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+                    <p class="instituicao">SENAI-São Caetano do Sul</p>
+                    <p class="ano">Jan-2023/ Dez-2024</p>
+                </div>
+
+                <div class="educacao-item">
+                    <h3>Técnico Automação Industrial</h3>
+                    <p class="instituicao">SENAI-São Caetano do Sul</p>
+                    <p class="ano">Jan-2023/ Jun-2024</p>
+                </div>
+
+                <div class="educacao-item">
+                    <h3>Técnico Mecatrônica</h3>
+                    <p class="instituicao">SENAI-São Caetano do Sul</p>
+                    <p class="ano">Jan-2020/ Dez-2021</p>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section class="habilidades">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React, Node.js</li>
+                    <li>Desenvolvimento Mobile, Web</li>
+                    <li>Instalações Elétrica</li>
+                    <li>Robótica, PLC</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p class="direitos">Todos os direitos reservados à JobLink's Brasil</p>
+</footer>

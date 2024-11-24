@@ -22,6 +22,8 @@ import { MensagensComponent } from './mensagens/mensagens.component';
 import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { CurriculoComponent } from './curriculo/curriculo.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { HomeComponent } from './home/home.component';
     NotificacaoComponent,
     LoginComponent,
     HomeComponent,
+    CurriculoComponent,
+    HeaderComponent,
     
    
   ],

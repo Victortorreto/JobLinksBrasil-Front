@@ -38,8 +38,8 @@ export class PerfilComponent {
   newSkill = '';
   newLanguage = '';
 
-  imageUrlExpe: string = 'src/work-experience.png';
-  imageUrlEdu: string = 'assets\education-forma.png';
+  imageUrlExpe: string = 'work-experience.png';
+  imageUrlEdu: string = 'education-forma.png';
   imageUrlFundo: string | ArrayBuffer | null = null;
   imageUrl: string | ArrayBuffer | null = null; // Armazena a URL da imagem ou null
   @ViewChild('fileInput') fileInput!: ElementRef; // Referência ao input de arquivo

@@ -1,0 +1,196 @@
+.container {
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 75vh;
+}
+footer{
+    margin-top: auto;
+}
+.direitos{
+    margin: 0;
+    padding: 15px;
+    background: #f0ab4f; 
+    width: 100%; 
+
+}
+
+/*------left-sidebar------*/
+.left-sidebar {
+    flex-basis: 25%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;
+}
+.sidebar-profile-box {
+    background: #ebdeb6;
+    border-radius: 15px;
+}
+.sidebar-profile-box img{
+    border-radius: 15px;
+}
+.sidebar-profile-info {
+    padding: 0 25px;
+    font-size: 14px;
+}
+
+.sidebar-profile-info img {
+    width: 90px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+    margin-top: -45px;
+}
+
+.sidebar-profile-info h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+/*Main*/
+.main{
+    flex-basis: 72%;
+}
+
+.busca-curriculo{
+    background-color: #ebdeb6;
+    border-radius: 15px;
+    margin-bottom: 20px; 
+}
+
+.foto-integrante {
+    display: flex;               
+    justify-content: space-around; 
+    align-items: center;         
+    gap: 20px;   
+    padding-top: 10px;                
+  }
+  
+.integrante {
+    text-align: center;          
+}
+  
+.integrante img {
+    width: 100px;                
+    height: 100px;               
+    border-radius: 50%;          
+    margin-bottom: 10px;         
+}
+  
+.integrante h3 {
+    font-size: 18px;            
+    margin-bottom: 5px;          
+}
+  
+.integrante a {
+    color: #007BFF;             
+    text-decoration: none;       
+    font-weight: bold;           
+    cursor: pointer;            
+}
+  
+
+.curriculo {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ebdeb6;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.foto img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.info {
+    margin-left: 20px;
+}
+
+.info h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+.info .cargo {
+    font-size: 20px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.info .contato, .info .localizacao {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Seções */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    border-bottom: 2px solid #f0ab4f;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.experiencia-item, .educacao-item {
+    margin-bottom: 15px;
+}
+
+.experiencia-item h3, .educacao-item h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.empresa {
+    font-size: 16px;
+    color: #555;
+}
+
+.ano {
+    font-size: 14px;
+    color: #888;
+}
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+ul li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Habilidades */
+.habilidades ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.habilidades ul li {
+    background-color: #f0ab4f;
+    padding: 8px 15px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+}
+

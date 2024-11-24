@@ -1,8 +1,18 @@
+
 .container {
     padding: 20px 6%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex: 1;
+}
+.direitos{
+    margin: 0;
+    padding: 15px;
+    background: #f0ab4f;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
 }
 
 /*------left-sidebar------*/
@@ -107,3 +117,5 @@
     position: sticky;
     top: 73px;
 }
+
+

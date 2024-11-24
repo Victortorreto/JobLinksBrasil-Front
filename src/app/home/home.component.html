@@ -32,8 +32,8 @@
         </li>
         <li (click)="triggerFileInput('doc')"><span class="material-symbols-outlined">
           description
-          </span>Documento<input #documentoInput type="file"
-            accept="documento/*" (change)="onFileChange($event, 'documento')" style="display:none"></li>
+          </span>Documento<input #documentInput type="file" accept="document/*" (change)="onFileChange($event, 'doc')" style="display: none">
+        </li>
         <li><button (click)="postContent()">Postar</button></li>
       </div>
     </div>
@@ -258,3 +258,6 @@
     </div>
   </div>
 </div>
+<footer>
+  <p class="direitos">Todos os direitos reservados à JobLink's Brasil</p>
+</footer>
