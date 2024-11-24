@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - JobLink's</title>
+    <link rel="stylesheet" href="registro.component.css">
+</head>
+
+
+
+<div class="container">
+    <header>
+        <img src="/logo.png" alt="magem Login" class="JobLink">
+    </header>
+    <body>   
+        <main>
+            <div class="geral">
+       
+                <div class="tela">
+                    <h2 class="texto_registro">CADASTRO:</h2>
+                    <form class="registro">
+                        <label for="name" class="titulo">NOME:</label>
+                        <div class="password-container">
+                            <input type="text" id="name" [(ngModel)]="nome" name="name" placeholder="Digite o seu nome">
+                        </div>
+
+                        <label for="email" class="titulo">EMAIL:</label>
+                        <div class="password-container">
+                            <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Digite o seu e-mail">
+                        </div>
+
+                        <label for="password" class="titulo">SENHA:</label>
+                        <div class="password-container">
+                            <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Digite a sua senha">
+                        </div>
+
+                        <label for="confirm-password" class="titulo">CONFIRME A SENHA:</label>
+                        <div class="password-container">
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a senha">
+                        </div>
+
+                        <div class="botao">
+                            <button type="submit" class="register-button" (click)="cadastro()">Cadastrar</button>
+                        </div>
+                    </form>
+                    <p class="login">Já é nosso usuário? <a href="../login/">Faça o login</a></p>
+                </div>
+ 
+                    <img src="/registro.png" alt="imagem Login" class="illustrations">
+             
+            </div>
+        </main>
+    </body>
+    <footer>
+        <p class="direitos">Todos os direitos reservados à JobLink's Brasil</p>
+    </footer>
+</div>
+
+</html>
