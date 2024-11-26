@@ -13,6 +13,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { CurriculoComponent } from './curriculo/curriculo.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { TrabalhoVoluntarioComponent } from './trabalho-voluntario/trabalho-voluntario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'vagas', component:VagasComponent},
   {path: 'mensagens', component:MensagensComponent},
   {path: 'notificacao', component:NotificacaoComponent},
+  {path: 'trabalhoVoluntario', component:TrabalhoVoluntarioComponent},
   {path: 'curriculo', component:CurriculoComponent},
   {path: 'home', component:HomeComponent},
   //não precisa path para o início},

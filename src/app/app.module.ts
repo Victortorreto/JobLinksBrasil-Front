@@ -19,6 +19,7 @@ import { MensagensComponent } from './mensagens/mensagens.component';
 import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TrabalhoVoluntarioComponent } from './trabalho-voluntario/trabalho-voluntario.component';
 import { HomeComponent } from './home/home.component';
 import { CurriculoComponent } from './curriculo/curriculo.component';
 import { HeaderComponent } from './header/header.component';
@@ -34,6 +35,7 @@ import { HeaderComponent } from './header/header.component';
     NotificacaoComponent,
     LoginComponent,
     RegistroComponent,
+    TrabalhoVoluntarioComponent,
     HomeComponent,
     CurriculoComponent,
     HeaderComponent,

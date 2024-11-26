@@ -1,0 +1,141 @@
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0ab4f;
+    padding: 15px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.container {
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.direitos{
+    margin: 0;
+    padding: 15px;
+    background: #f0ab4f;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+}
+
+/*------left-sidebar------*/
+.left-sidebar {
+    flex-basis: 25%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;
+}
+.sidebar-profile-box {
+    background: #ebdeb6;
+    border-radius: 15px;
+}
+.sidebar-profile-box img{
+    border-radius: 15px;
+}
+.sidebar-profile-info {
+    padding: 0 25px;
+    font-size: 14px;
+}
+
+.sidebar-profile-info img {
+    width: 90px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+    margin-top: -45px;
+}
+
+.sidebar-profile-info h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+/*------main-content------*/
+.main-content {
+    flex-basis: 74%;
+}
+
+.fundo-content{
+    background: #ebdeb6;
+    border-radius: 15px;
+}
+.fundo-content h3{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: bold;
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+.barra-de-rolagem-voluntario {
+    max-height: 540px; 
+    overflow-y: auto; 
+    margin-top: 10px;
+}
+
+.fundo-informacoes-container {
+    display: flex;  
+}
+
+.fundo-trabalho{
+    width: 31%;
+    background-color: #ebc860;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block; 
+    margin-left: 14px;
+}
+
+.fundo-informacoes {
+    width: 48%;
+    background-color: #ebc860;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block; 
+    margin-left: 14px;
+}
+
+.informacoes{
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    
+}
+.informacoes img{
+    width: 100px;
+    border-radius: 10%;
+    padding-left: 4px;
+    margin-left: 10px;
+}
+
+.informacoes h2{
+    font-size: 20px;
+    color: black;
+    top: 0;
+    margin-left: 25px;
+    /* display: inline-block;    */
+}
+.informacoes p{
+    font-size: 14px;
+}
+.informacoes button{
+    background-color: rgb(255, 98, 0);
+    border-radius: 15px;
+    font-size: 15px;
+    padding: 4px 10px;
+    margin-left: auto;
+}
+
