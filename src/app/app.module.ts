@@ -23,6 +23,7 @@ import { MensagensComponent } from './mensagens/mensagens.component';
 import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TrabalhoVoluntarioComponent } from './trabalho-voluntario/trabalho-voluntario.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { RegistroComponent } from './registro/registro.component';
     NotificacaoComponent,
     LoginComponent,
     RegistroComponent,
+    TrabalhoVoluntarioComponent,
     
    
   ],

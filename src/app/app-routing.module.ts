@@ -13,6 +13,8 @@ import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
+import { TrabalhoVoluntarioComponent } from './trabalho-voluntario/trabalho-voluntario.component';
+
 const routes: Routes = [
   {path: 'test', component:TestComponent},
   {path: 'itemdropdown', component:ItemDropdownComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path: 'vagas', component:VagasComponent},
   {path: 'mensagens', component:MensagensComponent},
   {path: 'notificacao', component:NotificacaoComponent},
+
+  {path: 'trabalhoVoluntario', component:TrabalhoVoluntarioComponent},
   //não precisa path para o início},
 ];
 
