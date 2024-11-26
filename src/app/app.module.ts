@@ -3,12 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
-import { ItemOutputComponent } from './item-output/item-output.component';
-import { ItemDropdownComponent } from './item-dropdown/item-dropdown.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TestComponent } from './test/test.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,15 +20,14 @@ import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TrabalhoVoluntarioComponent } from './trabalho-voluntario/trabalho-voluntario.component';
+import { HomeComponent } from './home/home.component';
+import { CurriculoComponent } from './curriculo/curriculo.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemDetailComponent,
-    ItemOutputComponent,
-    ItemDropdownComponent,
-    TestComponent,
     ConectaComponent,
     PerfilComponent,
     VagasComponent,
@@ -41,6 +36,9 @@ import { TrabalhoVoluntarioComponent } from './trabalho-voluntario/trabalho-volu
     LoginComponent,
     RegistroComponent,
     TrabalhoVoluntarioComponent,
+    HomeComponent,
+    CurriculoComponent,
+    HeaderComponent,
     
    
   ],

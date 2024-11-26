@@ -1,0 +1,74 @@
+<!-- 
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="logo"><img src="logo.png"></a>
+
+      <div class="search-box">
+        <i class="material-symbols-outlined"> search </i>
+        <input type="text" placeholder="Pesquisar">
+      </div>
+
+    </div>
+
+    <div class="navbar-center">
+      <ul>
+          <li> <a (click)="navigateToPage('/home')"> <span class="material-symbols-outlined">home</span><i>Home</i></a></li>
+          <li> <a (click)="navigateToPage('/vagas')"> <span class="material-symbols-outlined">work</span><i>Vagas</i></a></li>
+          <li> <a (click)="navigateToPage('/notificacao')"> <span class="material-symbols-outlined">notifications</span><i>Notificações</i></a></li>
+          <li> <a (click)="navigateToPage('/mensagens')"> <span class="material-symbols-outlined">message</span><i>Mensagens</i></a></li>
+          <li> <a (click)="navigateToPage('/perfil')"> <span class="material-symbols-outlined">person</span><i>Perfil</i></a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-right">
+      
+      <div class="online" (click)="toggleMenu()">
+        <img src="https://www.pngall.com/wp-content/uploads/5/Profile.png" class="nav-profile-img">
+      </div>
+    </div>
+
+    <div class="profile-menu-wrap" [ngClass]="{'open-menu': isMenuOpen}" id="profileMenu">
+      <div class="profile-menu">
+        <div class="user-info">
+          <img src="https://www.pngall.com/wp-content/uploads/5/Profile.png">
+          <div>
+            <h3>Nome do Usuário</h3>
+            <a [routerLink]="['/perfil']">Ver seu perfil</a> 
+          </div>
+        </div>
+        <hr>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> feedback </span>
+          <p>Feedback</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
+        </a>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined">settings </span>
+          <p>Configurações e Privacidade</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
+        </a>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> help </span>
+          <p>Ajuda e Suporte</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
+        </a>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> mode_night </span>
+          <p>Exibição e Acessibilidade</p>
+          <span class="material-symbols-outlined"> chevron_right </span>
+        </a>
+        <a class="profile-menu-link">
+          <span class="material-symbols-outlined"> logout </span>
+          <p>Logout</p>
+          <span [routerLink]="['/login']" class="material-symbols-outlined"> chevron_right </span>
+        </a>
+      </div>
+    </div>
+
+  </nav>
+
+  <router-outlet></router-outlet>
+
+</body> -->

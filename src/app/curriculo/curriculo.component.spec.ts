@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemOutputComponent } from './item-output.component';
+import { CurriculoComponent } from './curriculo.component';
 
-describe('ItemOutputComponent', () => {
-  let component: ItemOutputComponent;
-  let fixture: ComponentFixture<ItemOutputComponent>;
+describe('CurriculoComponent', () => {
+  let component: CurriculoComponent;
+  let fixture: ComponentFixture<CurriculoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ItemOutputComponent]
+      declarations: [CurriculoComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ItemOutputComponent);
+    fixture = TestBed.createComponent(CurriculoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

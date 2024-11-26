@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TestComponent } from './test/test.component';
-import { ItemDropdownComponent } from './item-dropdown/item-dropdown.component';
 
 import { ConectaComponent } from './conecta/conecta.component';
 
@@ -12,22 +10,23 @@ import { MensagensComponent } from './mensagens/mensagens.component';
 import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-
+import { CurriculoComponent } from './curriculo/curriculo.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { TrabalhoVoluntarioComponent } from './trabalho-voluntario/trabalho-voluntario.component';
 
 const routes: Routes = [
-  {path: 'test', component:TestComponent},
-  {path: 'itemdropdown', component:ItemDropdownComponent},
-  {path: 'conecta', component:ConectaComponent},
-  
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {path: 'conecta', component:ConectaComponent},  
   {path: 'login', component:LoginComponent},
   {path: 'registro', component:RegistroComponent},
   {path: 'perfil', component:PerfilComponent},
   {path: 'vagas', component:VagasComponent},
   {path: 'mensagens', component:MensagensComponent},
   {path: 'notificacao', component:NotificacaoComponent},
-
   {path: 'trabalhoVoluntario', component:TrabalhoVoluntarioComponent},
+  {path: 'curriculo', component:CurriculoComponent},
+  {path: 'home', component:HomeComponent},
   //não precisa path para o início},
 ];
 

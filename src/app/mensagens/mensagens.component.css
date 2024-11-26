@@ -1,0 +1,173 @@
+.container {
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.direitos{
+    margin: 0;
+    padding: 15px;
+    background: #f0ab4f;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+}
+
+/*------left-sidebar------*/
+.left-sidebar {
+    flex-basis: 29%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;  
+}
+.sidebar-people{
+    background: #ebdeb6;
+    padding: 15px 25px;
+    margin: 12px 0;
+    font-size: 12px;
+    border-radius: 15px;
+}
+.mensagens-title {
+    font-size: 30px;  
+    font-weight: 600;
+    margin: 4px 0 10px;
+    text-align: center;
+    font-family: bold;
+}
+
+.barra-de-rolagem {
+    max-height: 540px; /* Altura fixa para a área de notificações */
+    overflow-y: auto; /* Permite rolagem vertical quando necessário */
+    margin-top: 20px;
+    margin-right: auto;
+    
+}
+.barra-de-rolagem-conversa{
+    overflow-y: auto;
+    max-height: 420px;
+}
+.sd {
+    font-weight: 100%;
+    background-color: #ebc860;
+    border-radius: 30px;
+    padding: 8px 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+.sidebar-people-row{
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+}
+.sidebar-people-row img{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.sidebar-people-row h2{
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    color: black;
+    
+}
+.sidebar-people-row p {
+    font-size: 14px;
+    margin: 0; 
+}
+.sidebar-people-row a{
+    display: inline-block;
+    margin: 10px 0;
+    padding: 0 25px;
+    border: 1px solid #5f5f5f;
+    border-radius: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+
+
+
+/*------main-content------*/
+.main-content {
+    flex-basis: 50%;
+}
+
+.conversa {
+    background: #ebdeb6;
+    padding: 15px 25px;
+    margin: 12px 0;
+    font-size: 12px;
+    border-radius: 15px;
+    height: 92%;
+}
+.fundo-conversa{
+    font-weight: 100%;
+    background-color: #ebc860;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin-top: 10px; 
+    height: 93%;
+    
+}
+.fundo-conversa img{
+    width: 60px;
+    border-radius: 50%;  
+}
+.fundo-conversa h2{
+    display: inline-block;
+    font-size: 23px; 
+    color: black;
+    padding-left: 20px;   
+}
+
+.post-mensagem{
+    font-weight: 100%;
+    background-color: #dee7e7;
+    border-radius: 30px;  
+    width: 60%;  
+    margin-top: 35%; 
+}
+.post-mensagem p{
+    font-size: 12px;
+    max-width: 500px;  
+    text-align: left;
+    padding: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
+}
+.search-box {
+    background: #fffaeb;
+    width: 500px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px; 
+    margin-right: 10px;  
+}
+.search-box i {
+    width: 14px;
+}
+
+.search-box input {
+    width: 100%;
+    background: transparent;
+    padding: 8px;
+    outline: none;
+    border: 0;
+}
+
+
+/*------right-sidebar------*/
+.right-sidebar {
+    flex-basis: 18%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;
+}
+
